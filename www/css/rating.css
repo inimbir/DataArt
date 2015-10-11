@@ -1,0 +1,173 @@
+@font-face{
+    font-family: FontinSans; /* Имя шрифта */
+    src: url(../fonts/FontinSans_Cyrillic_R_46b.otf); /* Путь к файлу со шрифтом */
+}
+
+html, body {
+    font-family: FontinSans;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(51, 51, 51);
+}
+
+a {
+    cursor: pointer;
+}
+
+h1,h2,h3,h4,h5,h6,h7,h8,h9,h10
+{
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: rgb(40, 40, 40);
+    width: 100%;
+    height: 8%;
+}
+
+.logo img{
+    float: left;
+    width: 3%;
+    height: 3%;
+    margin: 0.5%;
+}
+
+.logo h1{
+    color: #fff;
+    float: left;
+    margin: 0.5%;
+    margin-top: 1.3%;
+}
+
+.list {
+    height: 80%;
+    margin: 10%;
+}
+
+.list-element {
+    background-color: #fff;
+    min-height 10%;
+    min-width: 100%;
+    margin: 0.3%;
+    margin-bottom: 0;
+    float: left;
+    display: inline;
+}
+
+
+.photo {
+    margin: 0.5%;
+    padding: 0;
+    height: 100%;
+    width: 10%;
+    float: left;
+    display: inline;
+} 
+
+.photo img {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+<!--.list-element img {
+    margin: 0.5%;
+    height: 10%;
+    width: 10%;
+} -->
+
+.info {
+    float: left;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    width: 35%;
+    height: auto;
+}
+
+.name h3{
+    margin: 0.2%;
+}
+
+
+.overall-rating {
+    display: inline;
+    height: 8%;
+    width: 10%;
+}
+
+.overall-rating h4 {
+    display: inline;
+}
+
+.overall-rating img {
+    height: 7%;
+    width: 7%;
+    margin: 0.2%;
+    margin-left: 0;
+}
+
+.open-descr {
+    height: 100%;
+    width: 0;
+}
+
+.open-descr p {
+    height: 0;
+    width: 0;
+    text-decoration: underline;
+}
+
+.open-descr p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bolder;
+}
+  
+
+.descr {
+    display: none;
+    background-color: #f7f7f7;
+    height: 5%;
+    width: 100%;
+    margin: 0.3%;
+    margin-top: 0;
+    float: left;
+}
+
+.descr h4 {
+    height: 100%;
+    width: 100%;
+    padding: 0.3%;
+}
+
+.rating {
+    float: left;
+    display: inline;
+    height: 8%;
+    width: 18%;
+    padding: 0;
+}
+
+.rating div {
+    width: 100%;
+    height: 100%;
+    margin: 5%;
+    padding: 2%;
+}
+
+.rating div h4 {
+    display: inline;
+}
+
+.rating div img {
+    position: relative;
+    float: right;
+    height: 10%;
+    width: 9%;
+    margin: 0;
+    padding: 0;
+    top: -5px;
+}
