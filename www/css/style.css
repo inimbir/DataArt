@@ -52,6 +52,28 @@ button:active {
 	background-color:#90CAF9;
 }
 
+#addRest {
+	margin-right:50px;
+}
+
+#saveNewRest {
+	font-size: 11pt;
+	float:none;
+	margin-right:0px;
+	margin-top:0px;
+	height:28px;
+	width: 90px;
+}
+
+#cancel {
+	font-size: 11pt;
+	float:none;
+	margin-left:5px;
+	margin-top:0px;
+	height:28px;
+	width: 90px;
+}
+
 #username {
 	float:right;
 	margin-top:5px;
@@ -90,4 +112,9 @@ button:active {
 
 div.listElement {
 	text-align:center;
+}
+
+#placingTip {
+	margin-right:5px;
+	margin-left:5px;
 }

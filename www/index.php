@@ -22,6 +22,7 @@ session_start();
 			$file_contents = file_get_contents($file);
 			$file_contents = str_replace("#username", $_SESSION['username'], $file_contents);
 			echo $file_contents;
+			if ($_SESSION['usertype']==1) echo '<button class="signbutton" id="addRest" tabindex="0" onclick="addRest()">Добавить</div>';
 		}
 		else {
 			$file = 'notlogged.html';
@@ -32,9 +33,11 @@ session_start();
 	</div>
 	<div id="map"></div>
 	<div id="list">
-		<br><br>
+		<br>
 		<div id="plist" class="listElement">
-			<br><br>Я - список ресторанов.
+			<div id="placingTip"></div>
+			<div id="newRestInfo"></div>
+			<div id="RestInfo"></div>
 		</div>
 	</div>
 </body>

@@ -10,7 +10,7 @@ if(isset($_POST['ajax'])){
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	
 	$conn->query("SET CHARACTER SET 'utf8';");
-	$res = $conn->query("SELECT id FROM users WHERE login='" . $varLogin . "'");
+	$res = $conn->query("SELECT id FROM users WHERE login='{$varLogin}'");
 	if ($res->num_rows==0) {
 		$conn->query("INSERT INTO users (login, password, type)
 					VALUES ('{$varLogin}', '" . md5($varPassword) . "','" . 0 . "')");
