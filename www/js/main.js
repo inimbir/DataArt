@@ -1,4 +1,25 @@
-﻿	var map;
+	$showRestInfo = function() {
+		$('#list').animate({
+			left:'70%'
+		});
+	};
+	
+	$hideRestInfo = function() {
+		$('#list').animate({
+			left:'100%'
+		});
+		cancel();
+	};
+	
+	$(document).ready(function(){
+		$('#closeList').click(function(){
+			$hideRestInfo();
+		});
+	});
+
+
+	
+	var map;
 	var loaded;
 	
 	function initMap() {
@@ -14,10 +35,10 @@
 			]   
 		  },
 		  {
-		    featureType: "transit",
-		    stylers: [
+			featureType: "transit",
+			stylers: [
 			 { visibility: "off" }
-		    ]
+			]
 		  }
 		];
 		map.setOptions({styles: noPoi});
@@ -40,7 +61,6 @@
 			// Browser doesn't support Geolocation
 			handleLocationError(false, infoWindow, map.getCenter());
 		}
-		
 		google.maps.event.addListener(map, 'tilesloaded', function() {
 			[].slice.apply(document.querySelectorAll('#map a')).forEach(function(item) {
 				item.setAttribute('tabindex','-1');
@@ -56,6 +76,7 @@
 	var MarkerListener;
 	
 	function addRest() {
+		$showRestInfo();
 		document.getElementById('RestInfo').innerHTML='';
 		document.getElementById('placingTip').innerHTML="Вы можете установить расположение нового ресторана при помощи клика на карте!";
 		MarkerListener = google.maps.event.addListener(map, 'click', function(event) {
@@ -119,6 +140,7 @@
 		}
 		document.getElementById('placingTip').innerHTML='';
 		document.getElementById('newRestInfo').innerHTML='';
+		$hideRestInfo();
 	}
 	
 	function addMarker(location, map) {
@@ -234,8 +256,8 @@
 						optimized: false
 					});
 					mrk.addListener('click', function() {
-						document.getElementById('addRest').disabled=false;
 						google.maps.event.removeListener(MarkerListener);
+						$showRestInfo();
 						if (Marker) {
 							Marker.setMap(null);
 							Marker=false;
@@ -243,6 +265,7 @@
 						document.getElementById('placingTip').innerHTML='';
 						document.getElementById('newRestInfo').innerHTML='';
 						document.getElementById('RestInfo').innerHTML="Название: " + mrk.getTitle();
+						document.getElementById('addRest').disabled=false;
 					});
 				});
 			}

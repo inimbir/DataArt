@@ -7,10 +7,11 @@ session_start();
 <head>
     <title>Я карта, я карта, я карта!</title>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE0G3dQnsjvZCkTF_6KR48M6hcN-8HuBM&callback=initMap"></script>
-	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="css" href="css/style.css" media="all">
+
 </head>
 <body>
 	<div id="signup-panel">
@@ -33,8 +34,9 @@ session_start();
 	</div>
 	<div id="map"></div>
 	<div id="list">
-		<br>
 		<div id="plist" class="listElement">
+			<img id="closeList" src="img/closeList.png"></img>
+			<br>
 			<div id="placingTip"></div>
 			<div id="newRestInfo"></div>
 			<div id="RestInfo"></div>
