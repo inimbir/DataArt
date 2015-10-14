@@ -16,7 +16,13 @@
 			$hideRestInfo();
 		});
 	});
+	$("#open_popup").click(function(){
+		$("#popup").css("display", "block");
+	});
 
+	$("#close_popup").click(function(){
+		$("#popup").css("display", "none");
+	});
 
 	
 	var map;
@@ -199,6 +205,7 @@
 	
 	function callReg() {
 		window.location.href='reg.php';
+
 	}
 	
 	function signOut() {

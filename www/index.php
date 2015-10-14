@@ -9,11 +9,19 @@ session_start();
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE0G3dQnsjvZCkTF_6KR48M6hcN-8HuBM&callback=initMap"></script>
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/register_popup.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="css" href="css/style.css" media="all">
 
 </head>
 <body>
+	<div id="popup">
+		<input id="fieldLogin" type="text" placeholder="Логин"><br>
+		<input id="fieldPassword" type="password" placeholder="Пароль"><br>
+		<input id="fieldPasswordConfirm" type="password" placeholder="Подтвердите пароль"><br>
+		<button id="confirm" onclick="confirmReg()"> Завершить </button>
+		<a href="#" id="close_popup">Sluitpopup</a>
+	</div>
 	<div id="signup-panel">
 		<img id="logo" src="img/logo.png">
 		<div id="afterlogoname">#RestaurantManager</div>

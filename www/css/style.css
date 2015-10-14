@@ -131,3 +131,18 @@ div.listElement {
 	margin-top: 5px;
 	margin-left: 5px;
 }
+#popup{
+	position: absolute;
+	z-index: 1;
+	background: rgba(0,0,0,.8);
+	display: none;
+	top: 20px;
+	left: 50px;
+	width: 300px;
+	height: 200px;
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 5px;
+	color: #fff;
+
+}
