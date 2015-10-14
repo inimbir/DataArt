@@ -16,11 +16,11 @@ session_start();
 </head>
 <body>
 	<div id="popup">
-		<input id="fieldLogin" type="text" placeholder="Логин"><br>
-		<input id="fieldPassword" type="password" placeholder="Пароль"><br>
-		<input id="fieldPasswordConfirm" type="password" placeholder="Подтвердите пароль"><br>
-		<button id="confirm" onclick="confirmReg()"> Завершить </button>
-		<a href="#" id="close_popup">Sluitpopup</a>
+		<input id="fieldLogin" type="text" placeholder="Логин" style=" margin-top: 8px;float:left; width: 100%;"><br>
+		<input id="fieldPassword" type="password" placeholder="Пароль"style="margin-top: 8px; float:left; width: 100%"><br>
+		<input id="fieldPasswordConfirm" type="password" placeholder="Подтвердите пароль" style="margin-top: 8px; float:left; width: 100%"><br>
+		<button id="confirm" onclick="confirmReg()" style="margin-top: 8px; float:left; width: 100%"> Завершить </button>
+		<a href="#" id="close_popup" style="margin-top: 8px; float:right">Отмена</a>
 	</div>
 	<div id="signup-panel">
 		<img id="logo" src="img/logo.png">
