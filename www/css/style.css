@@ -9,7 +9,6 @@ body {
 	margin:0;
 	padding:0;
 	overflow:hidden;
-	background-color:#42A5F5;
 }
 
 #signup-panel {
@@ -43,7 +42,6 @@ button.signbutton {
 	background-color:#90CAF9;
 	border-style:none;
 	height:20px;
-	margin-bottom:3px;
 }
 
 button:hover {
@@ -89,7 +87,6 @@ button:active {
 	margin-right:10px;
 	margin-top:4px;
 	font-family: 'Roboto', sans-serif;
-	margin-bottom:3px;
 }
 
 #fieldLogin {
@@ -97,11 +94,10 @@ button:active {
 	margin-right:5px;
 	margin-top:4px;
 	font-family: 'Roboto', sans-serif;
-	margin-bottom:3px;
 }
 
 #map {
-	height:98%;
+	height:100%;
 	width:100%;
 	float:left;
 }
@@ -115,7 +111,7 @@ button:active {
 	font-family: 'Roboto', sans-serif;
 	position:fixed; 
 	left:100%;
-	background: rgba(255, 255, 255, .8);
+	background-color:white;
 }
 
 div.listElement {
@@ -135,8 +131,20 @@ div.listElement {
 	margin-top: 5px;
 	margin-left: 5px;
 }
+#popup{
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 1;
+    background: rgba(0,0,0,.5);
+    display: none;
+    top: 40%;
+    left: 40%;
+    width: 170px;
+    height: 150px;
+    border: 1px solid #000;
+    border-radius: 5px;
 
-img.photo {
-	height: 100%;
-	width: 100%;
+    color: #fff;
+
 }
