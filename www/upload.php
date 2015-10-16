@@ -1,5 +1,6 @@
-﻿<?php 
+<?php 
 if( isset( $_GET['uploadfile'] ) ){
+	header('Content-type: text/html; charset=utf-8');
 	$varID = $_POST['id'];
     $error = false;
     $files = array();

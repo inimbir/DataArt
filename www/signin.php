@@ -1,5 +1,6 @@
 <?php
 if(isset($_POST['ajax'])){
+	header('Content-type: text/html; charset=utf-8');
 	$servername = "localhost";
 	$username = "root";
 	$password = "";

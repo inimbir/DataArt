@@ -5,10 +5,11 @@ session_start();
 <!DOCTYPE html>
 <html ng-app lang="en">
 <head>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>#RestaurantManager</title>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,400italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="css" href="css/style.css" media="all">
+	<link rel="stylesheet" href="css/style.css" media="all">
 	<link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 	<style>

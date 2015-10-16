@@ -35,7 +35,7 @@
 	
 	var map;
 	var loaded;
-	var id;
+	var id=0;
 	
 	function startMap() {
 		map = new google.maps.Map(document.getElementById('map'), {
@@ -335,7 +335,7 @@
 					$('#slides').remove();
 					$('.container').append("<div id=\"slides\" style=\"margin-top:5px;background: rgba(255, 255, 255, 1);\"></div>");
 					photos.forEach(function(photo, i, photos) {
-						$('#slides').append("<img class=\"photo\" src=\"photos\\" + id + "\\" + photo + "\">");
+						$('#slides').append("<img class=\"photo\" src=\"photos/" + id + "/" + photo + "\">");
 					});
 					$('#slides').slidesjs({
 						width: 400,
