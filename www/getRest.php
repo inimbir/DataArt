@@ -9,8 +9,9 @@ if(isset($_POST['getName'])){
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	
 	$conn->query("SET CHARACTER SET 'utf8';");
-	$res = $conn->query("SELECT name FROM restaurants WHERE id='{$_POST['id']}'");
+	$res = $conn->query("SELECT name, review FROM restaurants WHERE id='{$_POST['id']}'");
 	$row = $res->fetch_row();
-	echo $row[0];
+	$varEcho = $row[0] . '|' . $row[1];
+	echo $varEcho;
 } else {}
 ?>

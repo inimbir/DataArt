@@ -2,6 +2,8 @@
 		$('#list').animate({
 			left:'70%'
 		});
+		$('#addPhoto').show();
+		$('#editReview').show();
 	};
 	
 	$hideRestInfo = function() {
@@ -12,6 +14,9 @@
 	};
 	
 	$(document).ready(function(){
+		$('#addPhoto').hide();
+		$('#editReview').hide();
+		$('#saveReview').hide();
 		$('#closeList').click(function(){
 			$hideRestInfo();
 		});
@@ -92,6 +97,8 @@
 	
 	function addRest() {
 		$showRestInfo();
+		$('#addPhoto').hide();
+		$('#editReview').hide();
 		document.getElementById('RestInfo').innerHTML='';
 		document.getElementById('placingTip').innerHTML="Вы можете установить расположение нового ресторана при помощи клика на карте!";
 		MarkerListener = google.maps.event.addListener(map, 'click', function(event) {
@@ -100,6 +107,7 @@
 		});
 		document.getElementById('addRest').disabled=true;
 		document.getElementById('newRestInfo').innerHTML='<br>Название ресторана: <input id="nameRest"><br><br><button disabled class="signbutton" id="saveNewRest" onclick="saveRest()">Сохранить</button><button class="signbutton" id="cancel" onclick="cancel()">Отмена</button>';
+		document.getElementById('slides').innerHTML='';
 	}
 	
 	function saveRest() {
@@ -281,7 +289,18 @@
 							'getName': true
 							},
 							success: function(data) {
-								document.getElementById('RestInfo').innerHTML="Название: " + data;
+								var gotRest = data.split('|');
+								$('#saveReview').hide();
+								document.getElementById('RestInfo').innerHTML="Название: " + gotRest[0];
+								document.getElementById('RestReview').innerHTML="&nbsp;&nbsp;Рецензия: " + gotRest[1];
+								if (gotRest[1]=='') {
+									document.getElementById('editReview').onclick=function() {editReview(0);};
+									document.getElementById('editReview').innerHTML="Добавить рецензию";
+								}
+								else {
+									document.getElementById('editReview').onclick=function() {editReview(1);};
+									document.getElementById('editReview').innerHTML="Изменить рецензию";
+								}
 							}
 						});
 						loadPhotos();
@@ -292,11 +311,54 @@
 		});
 	}
 	
+	function editReview(a) {
+		var SourceReview = document.getElementById('RestReview').innerHTML;
+		var ReviewText = SourceReview.substr(22);
+		document.getElementById('RestReview').innerHTML='&nbsp;&nbsp;Рецензия:<br><textarea style="width:90%;margin-left:15px;margin-right:15px;" id="RestReviewArea"></textarea>';
+		document.getElementById('RestReviewArea').innerHTML=ReviewText;
+		document.getElementById('editReview').onclick=function() {cancelReview(a,SourceReview);};
+		document.getElementById('editReview').innerHTML="Отмена";
+		$('#saveReview').show();
+	}
+	
+	function saveReview() {
+		var ReviewText = $("#RestReviewArea").val();
+		if (ReviewText.length > 999) alert("Размер рецензии не должен превышать 1000 символов!");
+		else {
+			$.ajax({
+				method: 'post',
+				url: 'saveReview.php',
+				data: {
+				'id': id,
+				'review': ReviewText
+				},
+				success: function() {
+					document.getElementById('RestReview').innerHTML='&nbsp;&nbsp;Рецензия: ' + ReviewText;
+					document.getElementById('editReview').onclick=function() {editReview(1);};
+					document.getElementById('editReview').innerHTML="Изменить рецензию";
+				}
+			});
+		}
+		$('#saveReview').hide();
+	}
+	
+	function cancelReview(a,review) {
+		$('#saveReview').hide();
+		if (a==0) {
+			document.getElementById('RestReview').innerHTML=review;
+			document.getElementById('editReview').onclick=function() {editReview(0);};
+			document.getElementById('editReview').innerHTML="Добавить рецензию";
+		}
+		else {
+			document.getElementById('RestReview').innerHTML=review;
+			document.getElementById('editReview').onclick=function() {editReview(1);};
+			document.getElementById('editReview').innerHTML="Изменить рецензию";
+		}
+	}
+	
 	$callUpload = function() {
 		$('#Upload').trigger('click'); 
 	}
-	
-	
 	
 	function uploadPhoto() {
 		var data = new FormData();

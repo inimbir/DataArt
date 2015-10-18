@@ -131,20 +131,23 @@ session_start();
 	<div id="map"></div>
 	
 	<div id="list">
-		<div id="plist" class="listElement">
-			<img id="closeList" src="img/closeList.png"></img>
-			<br>
-			<div id="placingTip"></div>
-			<div id="newRestInfo"></div>
-			<div id="RestInfo"></div>
-			<div class="container">
-				<div id="slides" style="margin-top:5px;">
-				</div>
+		<img id="closeList" src="img/closeList.png"></img>
+		<br>
+		<div id="placingTip"></div>
+		<div id="newRestInfo"></div>
+		<div id="RestInfo" style="word-wrap: break-word;"></div>
+		<div class="container">
+			<div id="slides" style="margin-top:5px;">
 			</div>
-			<?
-			if($admin) echo '<button style="margin-top:5px;float:none;" class="signbutton" onclick="$callUpload()">Добавить фото</button>';
-			?>
 		</div>
+		<?
+		if($admin) echo '<button style="margin-top:5px;float:none;" id="addPhoto" class="signbutton" onclick="$callUpload()">Добавить фото</button>';
+		?>
+		<br>
+		<div id="RestReview"></div>
+		<?
+		if($admin) echo '<button style="margin-top:5px;float:none;" id="editReview" class="signbutton" onclick="editReview()">Изменить рецензию</button><button style="margin-top:5px;float:none;" id="saveReview" class="signbutton" onclick="saveReview()">Сохранить</button>';
+		?>
 	</div>
 	
 	<input style="width:0px;height:0px;" type="file" id="Upload" onChange="uploadPhoto()" accept="image/*" tabindex="-1">
