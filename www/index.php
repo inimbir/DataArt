@@ -140,6 +140,13 @@ session_start();
 			<div id="slides" style="margin-top:5px;">
 			</div>
 		</div>
+		<div>
+		<a onclick="Share.vkontakte('URL','TITLE','IMG_PATH','DESC')"> <img src="img/share/logo_vk.png"></a>
+		<a onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')"><img src="img/share/logo_fb.png"> </a>
+		<a onclick="Share.mailru('URL','TITLE','IMG_PATH','DESC')"> <img src="img/share/logo_mailru.png"></a>
+		<a onclick="Share.odnoklassniki('URL','DESC')"> <img src="img/share/logo_odnokl.png"></a>
+		<a onclick="Share.twitter('URL','TITLE')"><img src="img/share/logo_tw.png"></i></a>
+		</div>
 		<?
 		if($admin) echo '<button style="margin-top:5px;float:none;" id="addPhoto" class="signbutton" onclick="$callUpload()">Добавить фото</button>';
 		?>
