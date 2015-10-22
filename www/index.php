@@ -141,11 +141,9 @@ session_start();
 			</div>
 		</div>
 		<div>
-		<a onclick="Share.vkontakte('URL','TITLE','IMG_PATH','DESC')"> <img src="img/share/logo_vk.png"></a>
+		<a onclick="shareVK()"> <img src="img/share/logo_vk.png"></a>
 		<a onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')"><img src="img/share/logo_fb.png"> </a>
-		<a onclick="Share.mailru('URL','TITLE','IMG_PATH','DESC')"> <img src="img/share/logo_mailru.png"></a>
-		<a onclick="Share.odnoklassniki('URL','DESC')"> <img src="img/share/logo_odnokl.png"></a>
-		<a onclick="Share.twitter('URL','TITLE')"><img src="img/share/logo_tw.png"></i></a>
+		<a onclick="shareTW()"><img src="img/share/logo_tw.png"></i></a>
 		</div>
 		<?
 		if($admin) echo '<button style="margin-top:5px;float:none;" id="addPhoto" class="signbutton" onclick="$callUpload()">Добавить фото</button>';
@@ -161,6 +159,7 @@ session_start();
 </body>
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/jquery.slides.min.js"></script>
+	<script type="text/javascript" src="js/sharing.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script id="gmap" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE0G3dQnsjvZCkTF_6KR48M6hcN-8HuBM&callback=initMap"></script>
 </html>

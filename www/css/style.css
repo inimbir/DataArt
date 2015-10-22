@@ -24,7 +24,7 @@ body {
     padding-right: 10px;
 	z-index: 1;
 	background: #42A5F5;
-	opacity: 0.8;
+	opacity: 0.9;
 	display: none;
 	top: 40%;
 	left: 40%;
@@ -157,7 +157,6 @@ input.regField {
 	height:100%;
 	width:30%;
 	float:right;
-	opacity: 0.8;
 	overflow:auto;
 	font-family: 'Roboto', sans-serif;
 	position:fixed; 

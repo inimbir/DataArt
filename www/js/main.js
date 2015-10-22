@@ -42,6 +42,7 @@
 	var loaded;
 	var id=0;
 	
+	
 	function startMap() {
 		map = new google.maps.Map(document.getElementById('map'), {
 			center: {lat: -34.397, lng: 150.644},
@@ -118,7 +119,7 @@
 		var Name=document.getElementById('nameRest').value;
 		if (Name=="") alert('Название ресторана не может быть пустым!');
 		else {
-			if (Name.match(/^[a-zа-яё0-9]+$/i)){
+			if (Name.match(/^[a-zа-яё0-9\s]+$/i)){
 				$.ajax({
 					method: 'post',
 					url: 'saveRest.php',
@@ -303,6 +304,9 @@
 								}
 							}
 						});
+//						$.getJSON("http://maps.googleapis.com/maps/api/geocode/json?latlng=46.40759355744967,30.7218074798584&sensor=true", function(data) {
+//							alert(data["results"][0].formatted_address);
+//						});
 						loadPhotos();
 						document.getElementById('addRest').disabled=false;
 					});
@@ -314,7 +318,7 @@
 	function editReview(a) {
 		var SourceReview = document.getElementById('RestReview').innerHTML;
 		var ReviewText = SourceReview.substr(22);
-		document.getElementById('RestReview').innerHTML='&nbsp;&nbsp;Рецензия:<br><textarea style="width:90%;margin-left:15px;margin-right:15px;" id="RestReviewArea"></textarea>';
+		document.getElementById('RestReview').innerHTML='&nbsp;&nbsp;Рецензия:<br><textarea rows="5" style="width:90%;margin-left:15px;margin-right:15px;" id="RestReviewArea"></textarea>';
 		document.getElementById('RestReviewArea').innerHTML=ReviewText;
 		document.getElementById('editReview').onclick=function() {cancelReview(a,SourceReview);};
 		document.getElementById('editReview').innerHTML="Отмена";
@@ -407,4 +411,26 @@
 				}
 			}
 		});
+	}
+	
+	function shareVK() {
+		var title = document.getElementById('RestInfo').innerHTML;
+		var title2 = title.substr(10);
+		var review = document.getElementById('RestReview').innerHTML;
+		var review2 = review.substr(22);
+		Share.vkontakte('http://rest-manager.com',title2,'IMG_PATH',review2);
+	}
+	
+	function shareFB() {
+		var title = document.getElementById('RestInfo').innerHTML;
+		var title2 = title.substr(10);
+		var review = document.getElementById('RestReview').innerHTML;
+		var review2 = review.substr(22);
+		Share.facebook('http://rest-manager.com/',title2,'IMG_PATH',review2);
+	}
+	
+	function shareTW() {
+		var title = document.getElementById('RestInfo').innerHTML;
+		var title2 = title.substr(10);
+		Share.twitter('http://rest-manager.com','Увидел крутую рецензию на ресторан ' + title2 + " на этом сайте. ;)");
 	}

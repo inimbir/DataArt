@@ -12,7 +12,7 @@ if(isset($_POST['ajax'])){
 	$res = $conn->query("SELECT id, name, lat, lng FROM restaurants");
 	$result = "";
 	while ($row = $res->fetch_row()) $result = ($result . $row[0] . ',' . $row[1] . ',' . $row[2] . ',' . $row[3] . '|');
-	echo substr($result, 0, -1);;
+	echo substr($result, 0, -1);
 	
 } else {}
 ?>
