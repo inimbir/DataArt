@@ -30,68 +30,6 @@ session_start();
 		background: url('/img/loading.gif') no-repeat;
 		background-size: contain;
 	}
-    #slides {
-      display: none;
-    }
-
-    #slides .slidesjs-navigation {
-      margin-top:3px;
-    }
-
-    #slides .slidesjs-previous {
-      margin-right: 5px;
-      float: left;
-    }
-
-    #slides .slidesjs-next {
-      margin-right: 5px;
-      float: left;
-    }
-
-    .slidesjs-pagination {
-      margin: 6px 0 0;
-      float: right;
-      list-style: none;
-    }
-
-    .slidesjs-pagination li {
-      float: left;
-      margin: 0 1px;
-    }
-
-    .slidesjs-pagination li a {
-      display: block;
-      width: 13px;
-      height: 0;
-      padding-top: 13px;
-      background-image: url(img/pagination.png);
-      background-position: 0 0;
-      float: left;
-      overflow: hidden;
-    }
-
-    .slidesjs-pagination li a.active,
-    .slidesjs-pagination li a:hover.active {
-      background-position: 0 -13px
-    }
-
-    .slidesjs-pagination li a:hover {
-      background-position: 0 -26px
-    }
-
-    #slides a:link,
-    #slides a:visited {
-      color: #333
-    }
-
-    #slides a:hover,
-    #slides a:active {
-      color: #9e2020
-    }
-
-    .navbar {
-      overflow: hidden
-    }
 	</style>
 </head>
 <body>
@@ -137,7 +75,9 @@ session_start();
 		<div id="newRestInfo"></div>
 		<div id="RestInfo" style="word-wrap: break-word;"></div>
 		<div class="container">
-			<div id="slides" style="margin-top:5px;">
+			<div id='slider' style='margin-top:5px;background: rgba(255, 255, 255, 1);'>
+				<ul>
+				</ul>
 			</div>
 		</div>
 		<div>
@@ -158,7 +98,7 @@ session_start();
 	<input style="width:0px;height:0px;" type="file" id="Upload" onChange="uploadPhoto()" accept="image/*" tabindex="-1">
 </body>
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	<script src="js/jquery.slides.min.js"></script>
+	<script type="text/javascript" src="js/slider.js"></script>
 	<script type="text/javascript" src="js/sharing.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script id="gmap" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE0G3dQnsjvZCkTF_6KR48M6hcN-8HuBM&callback=initMap"></script>

@@ -108,7 +108,7 @@
 		});
 		document.getElementById('addRest').disabled=true;
 		document.getElementById('newRestInfo').innerHTML='<br>Название ресторана: <input id="nameRest"><br><br><button disabled class="signbutton" id="saveNewRest" onclick="saveRest()">Сохранить</button><button class="signbutton" id="cancel" onclick="cancel()">Отмена</button>';
-		document.getElementById('slides').innerHTML='';
+		document.getElementById('slider').innerHTML='';
 	}
 	
 	function saveRest() {
@@ -387,7 +387,7 @@
 	
 	
 	function loadPhotos() {
-		document.getElementById('slides').innerHTML='';
+		document.getElementById('slider').innerHTML='';
 		$.ajax({
 			method: 'post',
 			url: 'load.php',
@@ -398,16 +398,12 @@
 			success: function(data) {
 				if (data!="") {
 					var photos = data.split('|');
-					$('#slides').remove();
-					$('.container').append("<div id=\"slides\" style=\"margin-top:5px;background: rgba(255, 255, 255, 1);\"></div>");
+					$('#slider').remove();
+					$('.container').append("<div id='slider' style='margin-top:5px;background: rgba(255, 255, 255, 1);'><ul></ul></div>");
 					photos.forEach(function(photo, i, photos) {
-						$('#slides').append("<img class=\"photo\" src=\"photos/" + id + "/" + photo + "\">");
+						$('#slider ul').append("<li><img class='photo' src=\"photos/" + id + "/" + photo + "\"></li>");
 					});
-					$('#slides').slidesjs({
-						width: 400,
-						height: 400,
-						navigation: false
-					});
+					loadSlider();
 				}
 			}
 		});
