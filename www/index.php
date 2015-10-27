@@ -67,7 +67,7 @@ session_start();
 	</div>
 	
 	<div id="map"></div>
-	
+	<div id="fullPhoto"><img></div>
 	<div id="list">
 		<img id="closeList" src="img/closeList.png"></img>
 		<br>

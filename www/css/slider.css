@@ -76,8 +76,19 @@
  } 
  
  #slider .nav div img {
-	valign: middle;
+	align: middle;
 	width: 100%;
 	max-width: 75px;
 	margin-top: 150px;
+ }
+
+ #fullPhoto {
+	top: 16%;
+	left: 20%;
+    max-width:700px;
+	position: absolute;
+ }
+ #fullPhoto img {
+ 	border-radius: 5px;
+ 	max-width:100%;
  }

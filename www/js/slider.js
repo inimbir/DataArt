@@ -33,14 +33,28 @@ function slide (str, sl) {
 	var num = $(newActive).attr("id");
 	
 	$(ul).animate({marginLeft: "-"+step*num}, 500);
-}
-
+};
+function fullPh() {
+	var str = $('.on').html();
+	str = str.substring(24, str.length-2);
+	$("#fullPhoto img").attr('src', str);
+};
 $(document).on("click", "#slider .nav .prev", function() {
 	var sl = $(this).closest("#slider");
 	slide("prev", sl);
+	fullPh();
 });
 
 $(document).on("click", "#slider .nav .next", function() {
 	var sl = $(this).closest("#slider");
 	slide("next", sl);
+	fullPh();
+});
+
+$(document).on("click", "#slider .on", function() {
+	fullPh();
+	$("#fullPhoto").show();
+});
+$(document).on("click", "#map", function(){
+    $("#fullPhoto").hide();
 });
