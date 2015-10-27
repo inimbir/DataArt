@@ -53,8 +53,8 @@ $(document).on("click", "#slider .nav .next", function() {
 
 $(document).on("click", "#slider .on", function() {
 	fullPh();
-	$("#fullPhoto").show();
+	$("#fullPhoto").fadeIn(150);
 });
 $(document).on("click", "#map", function(){
-    $("#fullPhoto").hide();
+    $("#fullPhoto").fadeOut(100);
 });
