@@ -1,4 +1,4 @@
-<?
+<?php
 header('Content-type: text/html; charset=utf-8');
 session_start();
 ?>
@@ -46,7 +46,7 @@ session_start();
 	<div id="signup-panel">
 		<img id="logo" src="img/logo.png">
 		<div id="afterlogoname">#RestaurantManager</div>
-		<?
+		<?php
 		if (isset($_SESSION['username'])) {
 			$admin=false;
 			$file = 'logged.html';
@@ -85,12 +85,12 @@ session_start();
 		<a onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')"><img src="img/share/logo_fb.png"> </a>
 		<a onclick="shareTW()"><img src="img/share/logo_tw.png"></i></a>
 		</div>
-		<?
+		<?php
 		if($admin) echo '<button style="margin-top:5px;float:none;" id="addPhoto" class="signbutton" onclick="$callUpload()">Добавить фото</button>';
 		?>
 		<br>
 		<div id="RestReview"></div>
-		<?
+		<?php
 		if($admin) echo '<button style="margin-top:5px;float:none;" id="editReview" class="signbutton" onclick="editReview()">Изменить рецензию</button><button style="margin-top:5px;float:none;" id="saveReview" class="signbutton" onclick="saveReview()">Сохранить</button>';
 		?>
 	</div>

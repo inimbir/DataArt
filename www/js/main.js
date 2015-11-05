@@ -114,7 +114,7 @@
 	function saveRest() {
 		var image = {
 			scaledSize: new google.maps.Size(32, 32),
-			url: '../img/icon.png'
+			url: 'img/icon.png'
 		}
 		var Name=document.getElementById('nameRest').value;
 		if (Name=="") alert('Название ресторана не может быть пустым!');
@@ -175,7 +175,7 @@
 		document.getElementById('saveNewRest').disabled=false;
 		var image = {
 			scaledSize: new google.maps.Size(32, 32),
-			url: '../img/icon-new.gif'
+			url: 'img/icon-new.gif'
 		}
 		Marker = new google.maps.Marker({
 			position: location,
@@ -253,7 +253,7 @@
 	function getRestaurants() {
 		var image = {
 			scaledSize: new google.maps.Size(32, 32),
-			url: '../img/icon.png'
+			url: 'img/icon.png'
 		}
 		$.ajax({
 			method: 'post',
@@ -373,14 +373,16 @@
 			});
 			data.append("id", id);
 			$.ajax({
-				url: '../upload.php?uploadfile',
+				url: 'upload.php',
 				type: 'POST',
 				data: data,
 				cache: false,
 				dataType: 'json',
 				processData: false,
 				contentType: false,
-				success: function(data) {loadPhotos();}
+				success: function() {
+					loadPhotos();
+				}
 			});
 		}
 	}

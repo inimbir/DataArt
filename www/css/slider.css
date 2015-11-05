@@ -82,15 +82,13 @@
 	margin-top: 150px;
  }
 
-#fullPhoto {
+ #fullPhoto {
 	top: 16%;
 	left: 20%;
     max-width:700px;
-	max-height:700px;
 	position: absolute;
  }
  #fullPhoto img {
  	border-radius: 5px;
  	max-width:100%;
-	max-height:100%;
  }

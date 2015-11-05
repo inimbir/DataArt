@@ -1,9 +1,8 @@
 <?php 
-if( isset( $_GET['uploadfile'] ) ){
 	header('Content-type: text/html; charset=utf-8');
 	$varID = $_POST['id'];
     $error = false;
-    $files = array();
+	echo $varID;
 	$cyr  = array('а','б','в','г','д','e','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у', 
 	'ф','х','ц','ч','ш','щ','ъ','ь','ы','э', 'ю','я','А','Б','В','Г','Д','Е','Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У',
 	'Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ь','Ы','Э', 'Ю','Я' );
@@ -24,15 +23,5 @@ if( isset( $_GET['uploadfile'] ) ){
 				VALUES ({$varID}, '" . $_FILES[0]['name'] . "')");
 	$conn->close();
     if(!is_dir( $uploaddir )) mkdir( $uploaddir, 0777);
-    foreach( $_FILES as $file ){
-        if( move_uploaded_file( $file['tmp_name'], $uploaddir . basename($file['name']) ) ){
-            $files[] = realpath( $uploaddir . $file['name'] );
-			echo $varID;
-        }
-        else{
-            $error = true;
-        }
-    }
-
-}
+    move_uploaded_file( $_FILES[0]['tmp_name'], $uploaddir . basename($_FILES[0]['name']));
 ?>
