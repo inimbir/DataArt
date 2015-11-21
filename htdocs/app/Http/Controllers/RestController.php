@@ -51,7 +51,7 @@ class RestController extends Controller
         return -1;
     }
 
-    public function upload() {
+    public function uploadPhoto() {
         $file = Request::file('0');
         $filename = Str::ascii($file->getClientOriginalName());
         $id = Request::get("id");
@@ -63,10 +63,51 @@ class RestController extends Controller
         $name = Request::get('Name');
         $lat = Request::get('lat');
         $lng = Request::get('lng');
+        $adr = Request::get('adr');
         $results = DB::select('select id from restaurants where name = ?', [$name]);
         if ($results != []) return -1;
-        DB::insert('insert into restaurants (name,lat,lng) values (?, ?, ?)', [$name, $lat, $lng]);
+        DB::insert('insert into restaurants (name,lat,lng,adress) values (?, ?, ?, ?)', [$name, $lat, $lng, $adr]);
         $results = DB::select('select id from restaurants where name = ?', [$name]);
         return $results[0]->id;
+    }
+
+    public function loadPhotos() {
+        $rows = DB::select('select filename from photos where idR=?', [Request::get('id')]);
+        $result = "";
+        foreach ($rows as $row) $result = ($result . $row->filename . '|');
+        return substr($result, 0, -1);;
+    }
+    public function loadRestaurantsForMap() {
+        $rows = DB::select('select id, name, lat, lng from restaurants');
+        $result = "";
+        foreach($rows as $row) $result = ($result . $row->id . ',' . $row->name . ',' . $row->lat . ',' . $row->lng . '|');
+        return substr($result, 0, -1);
+    }
+
+    public function loadRestaurantsForRatingList() {
+        $results = DB::select('select name, review, adress from restaurants where id=?', [Request::get('id')]);
+        $file=file_get_contents('rest-example.html');
+        $file=str_replace('#NAME', $results[0]->name, $file);
+        $file=str_replace('#ID', Request::get('id'), $file);
+        $file=str_replace('#REVIEW',$results[0]->review, $file);
+        $file=str_replace('#ADRESS',$results[0]->adress, $file);
+        return $file;
+    }
+
+    public function getRestInfo() {
+        $result = DB::select('SELECT name, review FROM restaurants WHERE id=?', [Request::get('id')]);
+        return ($result[0]->name . '|' . $result[0]->review);
+    }
+
+    public function countRests() {
+        $rows = DB::select('SELECT id FROM restaurants');
+        $result = "";
+        foreach ($rows as $row) $result = $result . $row->id . '.';
+        return substr($result, 0, -1);
+    }
+
+    public function updateReview()
+    {
+        DB::update('update restaurants set review=? where id=?', [Request::get('review'), Request::get('id')]);
     }
 }

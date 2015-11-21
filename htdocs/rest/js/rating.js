@@ -1,3 +1,9 @@
+$.ajaxSetup({
+	headers: {
+		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	}
+});
+
 $(document).ready(function() {
 	loadRests();
 });
@@ -9,20 +15,21 @@ function showDescr(a) {
 function loadRests() {
 	$.ajax({
 		method: 'post',
-		url: 'getRestCount.php',
+		url: 'countRests',
 		success: function(data) {
-			for (var i=1; i<=data; i++) {
+			var restIds = data.split('.');
+			restIds.forEach(function(restId) {
 				$.ajax({
 					method: 'post',
 					data: {
-					'id': i
+						'id': restId
 					},
-					url: 'getRests2.php',
+					url: 'loadRestaurantsForRatingList',
 					success: function(data1) {
 						$('#restlist').append(data1);
 					}
 				});
-			}
+			});
 		}
 	});
 }

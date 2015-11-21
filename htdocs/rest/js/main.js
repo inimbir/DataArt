@@ -128,61 +128,67 @@
 		if (Name=="") alert('Название ресторана не может быть пустым!');
 		else {
 			if (Name.match(/^[a-zа-яё0-9\s]+$/i)){
-				$.ajax({
-					method: 'post',
-					url: 'saveRest',
-					data: {
-					'Name': Name,
-					'lat': Marker.getPosition().lat(),
-					'lng': Marker.getPosition().lng()
-					},
-					success: function(data) {
-						if (data!=-1) {
-							alert("Ресторан успешно добавлен!");
-							Marker.setIcon(image);
-							Marker.setTitle(data);
-							var mrk=Marker;
-							mrk.addListener('click', function() {
-								document.getElementById('addRest').disabled=false;
-								google.maps.event.removeListener(MarkerListener);
-								$showRestInfo();
-								if (Marker) {
-									Marker.setMap(null);
-									Marker=false;
-								}
-								id=mrk.getTitle();
-								document.getElementById('placingTip').innerHTML='';
-								document.getElementById('newRestInfo').innerHTML='';
-								$.ajax({
-									method: 'post',
-									url: 'getRest.php',
-									data: {
-										'id': id,
-										'getName': true
-									},
-									success: function(data) {
-										var gotRest = data.split('|');
-										$('#saveReview').hide();
-										document.getElementById('RestInfo').innerHTML="Название: " + gotRest[0];
-										document.getElementById('RestReview').innerHTML="&nbsp;&nbsp;Рецензия: " + gotRest[1];
-										if (gotRest[1]=='') {
-											document.getElementById('editReview').onclick=function() {editReview(0);};
-											document.getElementById('editReview').innerHTML="Добавить рецензию";
-										}
-										else {
-											document.getElementById('editReview').onclick=function() {editReview(1);};
-											document.getElementById('editReview').innerHTML="Изменить рецензию";
-										}
+				var adress;
+				var lat = Marker.getPosition().lat();
+				var lng = Marker.getPosition().lng();
+				$.getJSON("getAdr/" + lat + "," + lng, function(data1) {
+					adress = data1["results"][0].formatted_address;
+					$.ajax({
+						method: 'post',
+						url: 'saveRest',
+						data: {
+						'Name': Name,
+						'lat': lat,
+						'lng': lng,
+						'adr': adress
+						},
+						success: function(data) {
+							if (data!=-1) {
+								alert("Ресторан успешно добавлен!");
+								Marker.setIcon(image);
+								Marker.setTitle(data);
+								var mrk=Marker;
+								mrk.addListener('click', function() {
+									document.getElementById('addRest').disabled=false;
+									google.maps.event.removeListener(MarkerListener);
+									$showRestInfo();
+									if (Marker) {
+										Marker.setMap(null);
+										Marker=false;
 									}
+									id=mrk.getTitle();
+									document.getElementById('placingTip').innerHTML='';
+									document.getElementById('newRestInfo').innerHTML='';
+									$.ajax({
+										method: 'post',
+										url: 'getRestInfo',
+										data: {
+											'id': id
+										},
+										success: function(data) {
+											var gotRest = data.split('|');
+											$('#saveReview').hide();
+											document.getElementById('RestInfo').innerHTML="Название: " + gotRest[0];
+											document.getElementById('RestReview').innerHTML="&nbsp;&nbsp;Рецензия: " + gotRest[1];
+											if (gotRest[1]=='') {
+												document.getElementById('editReview').onclick=function() {editReview(0);};
+												document.getElementById('editReview').innerHTML="Добавить рецензию";
+											}
+											else {
+												document.getElementById('editReview').onclick=function() {editReview(1);};
+												document.getElementById('editReview').innerHTML="Изменить рецензию";
+											}
+										}
+									});
+									loadPhotos();
+									Marker=false;
 								});
-								loadPhotos();
 								Marker=false;
-							});
-							Marker=false;
-							cancel();
+								cancel();
+							}
+							if (data==-1) alert("Ресторан с таким именем уже существует в системе!");
 						}
-						if (data==-1) alert("Ресторан с таким именем уже существует в системе!");
-					}
+					});
 				});
 			}
 			else alert("Название ресторана может включать только буквы и цифры!")
@@ -290,10 +296,7 @@
 		}
 		$.ajax({
 			method: 'post',
-			url: 'getRests.php',
-			data: {
-			'ajax': true
-			},
+			url: 'loadRestaurantsForMap',
 			success: function(data) {
 				var rests = data.split('|');
 				rests.forEach(function(irest, i, rests) {
@@ -317,10 +320,9 @@
 						document.getElementById('newRestInfo').innerHTML='';
 						$.ajax({
 							method: 'post',
-							url: 'getRest.php',
+							url: 'getRestInfo',
 							data: {
-							'id': id,
-							'getName': true
+							'id': id
 							},
 							success: function(data) {
 								var gotRest = data.split('|');
@@ -337,9 +339,6 @@
 								}
 							}
 						});
-//						$.getJSON("http://maps.googleapis.com/maps/api/geocode/json?latlng=46.40759355744967,30.7218074798584&sensor=true", function(data) {
-//							alert(data["results"][0].formatted_address);
-//						});
 						loadPhotos();
 						document.getElementById('addRest').disabled=false;
 					});
@@ -364,7 +363,7 @@
 		else {
 			$.ajax({
 				method: 'post',
-				url: 'saveReview.php',
+				url: 'updateReview',
 				data: {
 				'id': id,
 				'review': ReviewText
@@ -424,7 +423,7 @@
 		document.getElementById('slider').innerHTML='';
 		$.ajax({
 			method: 'post',
-			url: 'load.php',
+			url: 'loadPhotos',
 			data: {
 			'id': id,
 			'ajax': true
