@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1452aacf-eed2-47ae-ba0f-35152910d223" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\dataart\htdocs\resources\views\pages\rating.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\contact.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\getRest.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\getRestCount.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\getRests.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\load.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\0\2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\1\1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\1\2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\1\3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\1\4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\1\af4556247c0a021413164200016.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\2\1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\2\2 kopiya.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\2\af4556247c0a021413164200016.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\50\3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\7\2 kopiya.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\7\2copy.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\7\3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\saveReview.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/app/Http/Controllers/RestController.php" afterPath="$PROJECT_DIR$/htdocs/app/Http/Controllers/RestController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/app/Http/Controllers/WelcomeController.php" afterPath="$PROJECT_DIR$/htdocs/app/Http/Controllers/WelcomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/getRests2.php" afterPath="$PROJECT_DIR$/htdocs/rest/getRests2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/js/main.js" afterPath="$PROJECT_DIR$/htdocs/rest/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/js/rating.js" afterPath="$PROJECT_DIR$/htdocs/rest/js/rating.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/rest-example.html" afterPath="$PROJECT_DIR$/htdocs/rest/rest-example.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/app/Http/routes.php" afterPath="$PROJECT_DIR$/htdocs/app/Http/routes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/resources/views/pages/rating.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/.idea/workspace.xml" afterPath="$PROJECT_DIR$/htdocs/.idea/workspace.xml" />
     </list>
     <ignored path="DataArt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,11 +36,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="all.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="all.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/htdocs/dashboard/javascripts/all.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1256367">
+            <state vertical-scroll-proportion="0.0">
               <caret line="4707" column="0" selection-start-line="4707" selection-start-column="0" selection-end-line="4707" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rating.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/htdocs/resources/views/pages/rating.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -191,6 +174,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataArt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dataart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="htdocs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataArt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dataart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="htdocs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataArt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dataart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="htdocs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -455,7 +504,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447184187484</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Full Laravel. Adress added.&#10;Bug with disability to edit restaurant after adding without reloading fixed.">
+      <created>1448119549217</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1448119549217</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -472,15 +527,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.49572194" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.4893048" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.50427806" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756758" sideWeight="0.49785638" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756758" sideWeight="0.49785638" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3077778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24166666" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -494,7 +550,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.4893048" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -523,7 +578,8 @@
     <MESSAGE value="Sharing added, rating page added" />
     <MESSAGE value="Minor fixes" />
     <MESSAGE value="It's Laravel now (partly)" />
-    <option name="LAST_COMMIT_MESSAGE" value="It's Laravel now (partly)" />
+    <MESSAGE value="Full Laravel. Adress added.&#10;Bug with disability to edit restaurant after adding without reloading fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Full Laravel. Adress added.&#10;Bug with disability to edit restaurant after adding without reloading fixed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -554,6 +610,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -561,6 +618,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -568,6 +626,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -581,8 +640,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/htdocs/dashboard/javascripts/all.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1256367">
+        <state vertical-scroll-proportion="0.0">
           <caret line="4707" column="0" selection-start-line="4707" selection-start-column="0" selection-end-line="4707" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/htdocs/resources/views/pages/rating.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
