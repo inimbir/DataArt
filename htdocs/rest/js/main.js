@@ -1,3 +1,5 @@
+	var text = "";
+
 	$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -35,6 +37,16 @@
 		$("#close_popup").click(function () {
 			$("#popup").hide(1000);
 		});
+		$('.userLabelText').focusout(function(){
+			var t1 = document.getElementsByClassName('userLabelText')[0].value;
+			var id1 = document.getElementsByClassName('userLabelText')[0].id;
+			if (text!=t1) {
+				$.get("setLabel", {id: id1, text: t1}, function() {
+					document.getElementsByClassName('userLabelText')[0].value = t1;
+					text=t1;
+				});
+			}
+		});
 	});
 	
 	$(window).on('load', function () {
@@ -60,19 +72,32 @@
 	}
 
 	function drawMore() {
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(function(position) {
-			  var pos = {
-				lat: position.coords.latitude,
-				lng: position.coords.longitude
-			  };
-			  map.setCenter(pos);
-			}, function() {
-			  alert("Не удалось установить местоположение.");
-			});
-		} 
+		if (moveTo==0) {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function (position) {
+					var pos = {
+						lat: position.coords.latitude,
+						lng: position.coords.longitude
+					};
+					map.setCenter(pos);
+				}, function () {
+					alert("Не удалось установить местоположение.");
+				});
+			}
+			else {
+				alert("Ваш браузер не поддерживает геолокацию.");
+			}
+		}
 		else {
-			alert("Ваш браузер не поддерживает геолокацию.");
+			$.get("getCoords", {id: moveTo}, function (data) {
+				var latlng = data.split('|');
+				var pos = {
+					lat: Number(latlng[0]),
+					lng: Number(latlng[1])
+				};
+				map.setZoom(18);
+				map.setCenter(pos);
+			});
 		}
 		var noPoi = [
 		  {
@@ -213,7 +238,7 @@
 		var image = {
 			scaledSize: new google.maps.Size(32, 32),
 			url: 'img/icon-new.gif'
-		}
+		};
 		Marker = new google.maps.Marker({
 			position: location,
 			map: map,
@@ -283,7 +308,7 @@
 				if (data==1) location.reload();
 				if (data==-1) alert("Неправильный логин/пароль!");
 			},
-			erro: function(error) {
+			error: function(error) {
 				alert(error);
 			}
 		});
@@ -293,7 +318,7 @@
 		var image = {
 			scaledSize: new google.maps.Size(32, 32),
 			url: 'img/icon.png'
-		}
+		};
 		$.ajax({
 			method: 'post',
 			url: 'loadRestaurantsForMap',
@@ -318,6 +343,14 @@
 						id=mrk.getTitle();
 						document.getElementById('placingTip').innerHTML='';
 						document.getElementById('newRestInfo').innerHTML='';
+						if (document.getElementById('userLabel').innerHTML!="0") {
+							document.getElementsByClassName('userLabelText')[0].id = id;
+							$.get("getLabel", {id: id}, function (data) {
+								var d = data.toString();
+								document.getElementsByClassName('userLabelText')[0].value = d;
+								text = d;
+							});
+						}
 						$.ajax({
 							method: 'post',
 							url: 'getRestInfo',
@@ -329,18 +362,22 @@
 								$('#saveReview').hide();
 								document.getElementById('RestInfo').innerHTML="Название: " + gotRest[0];
 								document.getElementById('RestReview').innerHTML="&nbsp;&nbsp;Рецензия: " + gotRest[1];
-								if (gotRest[1]=='') {
-									document.getElementById('editReview').onclick=function() {editReview(0);};
-									document.getElementById('editReview').innerHTML="Добавить рецензию";
-								}
-								else {
-									document.getElementById('editReview').onclick=function() {editReview(1);};
-									document.getElementById('editReview').innerHTML="Изменить рецензию";
-								}
+								$.get("isAdmin", function (data) {
+									if (data==1) {
+										if (gotRest[1]=='') {
+											document.getElementById('editReview').onclick=function() {editReview(0);};
+											document.getElementById('editReview').innerHTML="Добавить рецензию";
+										}
+										else {
+											document.getElementById('editReview').onclick=function() {editReview(1);};
+											document.getElementById('editReview').innerHTML="Изменить рецензию";
+										}
+										document.getElementById('addRest').disabled=false;
+									}
+								});
 							}
 						});
 						loadPhotos();
-						document.getElementById('addRest').disabled=false;
 					});
 				});
 			}
@@ -394,7 +431,7 @@
 	
 	$callUpload = function() {
 		$('#Upload').trigger('click'); 
-	}
+	};
 	
 	function uploadPhoto() {
 		var data = new FormData();

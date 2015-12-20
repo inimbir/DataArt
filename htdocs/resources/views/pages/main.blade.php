@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/style.css" media="all">
 	<link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="icon" type="image/png" href="favicon.ico">
 	<style>
 	#page-preloader {
 		position: absolute;
@@ -28,6 +29,12 @@
 		background-size: contain;
 	}
 	</style>
+	<script>
+		var moveTo=0;
+		<?php
+		if (isset($id)) echo "moveTo=" . $id;
+		?>
+	</script>
 </head>
 <body>
 	<div id="page-preloader"><span class="spinner"></span></div>
@@ -75,19 +82,23 @@
 				</ul>
 			</div>
 		</div>
-		<div>
-		<a onclick="shareVK()"> <img src="img/share/logo_vk.png"></a>
-		<a onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')"><img src="img/share/logo_fb.png"> </a>
-		<a onclick="shareTW()"><img src="img/share/logo_tw.png"></i></a>
-		</div>
 		<?php
 		if(isset($usertype)&&$usertype==1) echo '<button style="margin-top:5px;float:none;" id="addPhoto" class="signbutton" onclick="$callUpload()">Добавить фото</button>';
+		if(isset($username)) echo '<div id="userLabel" style="width: 100%;text-align:center;"><input class="userLabelText" type="text" placeholder="Что вы думаете об этом ресторане?"><br></div>';
+		else echo '<div id="userLabel" style="visibility: hidden;">0</div>'
 		?>
 		<br>
 		<div id="RestReview"></div>
 		<?php
 		if(isset($usertype)&&$usertype==1) echo '<button style="margin-top:5px;float:none;" id="editReview" class="signbutton" onclick="editReview()">Изменить рецензию</button><button style="margin-top:5px;float:none;" id="saveReview" class="signbutton" onclick="saveReview()">Сохранить</button>';
 		?>
+		<div>
+			<br>
+			Поделиться рецензией:
+			<a onclick="shareVK()"><img style="width: 35px;" src="img/share/logo_vk.png"></a>
+			<a onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')"><img style="width: 35px;" src="img/share/logo_fb.png"> </a>
+			<a onclick="shareTW()"><img style="width: 35px;" src="img/share/logo_tw.png"></i></a>
+		</div>
 	</div>
 	
 	<input style="width:0px;height:0px;" type="file" id="Upload" onChange="uploadPhoto()" accept="image/*" tabindex="-1">

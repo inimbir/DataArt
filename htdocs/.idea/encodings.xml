@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bd_kurs/bdController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bd_kurs/index.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bd_kurs/js/jquery-2.1.1.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bd_kurs/js/main.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bd_kurs/js/request.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bd_kurs/pages/menu-journal.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bd_kurs/pages/menu-main.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bd_kurs/reg.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bd_kurs/regLogController.php" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

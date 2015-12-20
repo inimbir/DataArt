@@ -191,3 +191,17 @@ img.photo {
 	height: 100%;
 	width: 100%;
 }
+
+.userLabelText {
+	height: 25px;
+	color: #a9a9a9;
+	font-size: 16px;
+	margin-top: 10px;
+	width: 90%;
+	background: rgba(0,0,0,0);
+	border:0;
+}
+
+.userLabelText:focus {
+	outline:0;
+}

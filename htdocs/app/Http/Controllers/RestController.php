@@ -24,6 +24,12 @@ class RestController extends Controller
     }
 
     public function rating() {
+        if (Session::has('username')) {
+            return view('pages.rating')->with([
+                'username' => Session::get('username'),
+                'usertype' => Session::get('usertype')
+            ]);
+        }
         return view('pages.rating');
     }
 
@@ -73,25 +79,18 @@ class RestController extends Controller
 
     public function loadPhotos() {
         $rows = DB::select('select filename from photos where idR=?', [Request::get('id')]);
-        $result = "";
-        foreach ($rows as $row) $result = ($result . $row->filename . '|');
-        return substr($result, 0, -1);;
+        if ($rows!=[]) {
+            $result = "";
+            foreach ($rows as $row) $result = ($result . $row->filename . '|');
+            return substr($result, 0, -1);
+        }
+        return "../nopic.png";
     }
     public function loadRestaurantsForMap() {
         $rows = DB::select('select id, name, lat, lng from restaurants');
         $result = "";
-        foreach($rows as $row) $result = ($result . $row->id . ',' . $row->name . ',' . $row->lat . ',' . $row->lng . '|');
+        foreach ($rows as $row) $result = ($result . $row->id . ',' . $row->name . ',' . $row->lat . ',' . $row->lng . '|');
         return substr($result, 0, -1);
-    }
-
-    public function loadRestaurantsForRatingList() {
-        $results = DB::select('select name, review, adress from restaurants where id=?', [Request::get('id')]);
-        $file=file_get_contents('rest-example.html');
-        $file=str_replace('#NAME', $results[0]->name, $file);
-        $file=str_replace('#ID', Request::get('id'), $file);
-        $file=str_replace('#REVIEW',$results[0]->review, $file);
-        $file=str_replace('#ADRESS',$results[0]->adress, $file);
-        return $file;
     }
 
     public function getRestInfo() {
@@ -109,5 +108,25 @@ class RestController extends Controller
     public function updateReview()
     {
         DB::update('update restaurants set review=? where id=?', [Request::get('review'), Request::get('id')]);
+    }
+
+    public function loadRestaurantsSortedByGeneral() {
+        $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, "img/2.jpg" as img from restaurants order by ratingWhole desc');
+        return json_encode($results);
+    }
+
+    public function loadRestaurantsSortedByKitchen() {
+        $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, "img/2.jpg" as img from restaurants order by ratingKitchen desc');
+        return json_encode($results);
+    }
+
+    public function loadRestaurantsSortedByInterier() {
+        $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, "img/2.jpg" as img from restaurants order by ratingInterier desc');
+        return json_encode($results);
+    }
+
+    public function loadRestaurantsSortedByService() {
+        $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, "img/2.jpg" as img from restaurants order by ratingService desc');
+        return json_encode($results);
     }
 }
