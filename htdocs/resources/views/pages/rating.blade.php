@@ -14,18 +14,13 @@
         <link rel="stylesheet" href="css/rate.css" type=text/css>
         <link rel="icon" type="image/png" href="favicon.ico">
         <!-- Latest compiled and minified JavaScript -->
-        <script>
-            var admin=0;
-            <?php
-                if(isset($usertype)) echo 'admin = ' . $usertype . ';'
-            ?>
-        </script>
         <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/stars.js"></script>
         <script type="text/javascript" src="js/rating.js"></script>
     </head>
     <body>
+       
         <div id="modal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -93,13 +88,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="container-fluid wrap">
-            <div class="container-fluid header pull-left">
-                    <div class="logo pull-left">
-                        <img src="img/logo-rating.png" class="img-responsive">
-                    </div>
-            </div>
             <div class="container-fluid">
                 <div class="container">
                     <div class="navbar navbar-left nav">

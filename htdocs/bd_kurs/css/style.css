@@ -1,0 +1,168 @@
+header {
+    margin-top: 8px;
+    margin-right: 10px;
+    float:right;
+    padding: 0;
+}
+
+html, body {
+    background: #E0F7FA;E0F7FA
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.rlfields {
+    font-family: 'Roboto', sans-serif;
+    font-weight:400;
+    width: 100px;
+    height: 20px;
+}
+
+#popup{
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 1;
+    background: #00ACC1;
+    opacity: 0.9;
+    top: 40%;
+    left: 45%;
+    width: 170px;
+    height: 150px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+#popuphead {
+    margin-top:8px;
+    font-weight:400;
+}
+
+input.regField {
+    font-family: inherit;
+    font-weight:400;
+    width: 98%;
+}
+
+.confirm {
+    font-size: 14px;
+    font-weight: 450;
+    background-color:#0097A7;
+    border-style:none;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.confirm:hover {
+    background-color:#E0F7FA;
+}
+
+.confirm:active {
+    background-color:#0097A7;
+}
+
+.lbuttons {
+    font-size: 14px;
+    font-weight: 450;
+    background-color:#E0E0E0;
+    border-style:none;
+    height: 23px;
+}
+
+.lbuttons:hover {
+    background-color:#E0F7FA;
+}
+
+.lbuttons:active {
+    background-color:#E0E0E0;
+}
+
+.rlbuttons {
+    font-size: 14px;
+    font-weight: 450;
+    background-color:#0097A7;
+    border-style:none;
+    height: 22px;
+}
+
+.rlbuttons:hover {
+    background-color:#E0F7FA;
+}
+
+.rlbuttons:active {
+    background-color:#0097A7;
+}
+
+#menu {
+    position: fixed;
+    width: 15%;
+    top: 40px;
+    bottom: 0;
+    background: #00BCD4;
+}
+
+.menuButton {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: right;
+    padding: 0px 10px 0px 0px;
+    background: #00BCD4;
+    width: 100%;
+    height: 50px;
+    border: 0;
+}
+
+.menuButton:hover {
+    background:#E0F7FA!important;
+}
+
+#author {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    color: cyan;
+    position: absolute;
+    bottom: 5px;
+}
+
+#content {
+    position: fixed;
+    top: 40px;
+    bottom: 0;
+    left: 15%;
+    width: 85%;
+}
+
+.obuttons {
+    width: 100px;
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: 450;
+    background-color:#212121;
+    color:#E0E0E0;
+    border-style:none;
+    height: 23px;
+}
+
+.obuttons:hover {
+    background-color:#E0E0E0;
+    color:#000000;
+}
+
+.obuttons:active {
+    background-color:#212121;
+    color:#E0E0E0;
+}
+
+.ofields {
+    margin-top: 5px;
+    margin-right:5px;
+    height: 20px;
+}

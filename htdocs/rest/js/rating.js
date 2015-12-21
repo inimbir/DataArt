@@ -195,7 +195,18 @@ var doSort = function() {
     }
     $(".descr").click(showModal);
     $('[data-mapid]').bind('click', function() {
-        window.location = "showOnMap?idR=" + $(this).attr('data-mapid');
+        var id1 = $(this).attr('data-mapid');
+        $.get("getCoords", {id: id1}, function (data) {
+            var latlng = data.split('|');
+            var pos = {
+                lat: Number(latlng[0]),
+                lng: Number(latlng[1])
+            };
+            map.setZoom(18);
+            map.setCenter(pos);
+            window.location.hash = id1;
+            setMap();
+        });
     });
 };
 
@@ -215,6 +226,7 @@ var readyStars = function() {
     var rate = 0;
     $('.modal-center').mouseenter(function(){
         rate = $(this).children('img[src$=\"img/star.png\"]').last().attr("id"); 
+        if (rate == undefined) rate = 0;
     });
     
     $('.modal-center').mouseleave(function(){
@@ -239,10 +251,6 @@ var saveRating = function() {
     var kitchenMark = $("#modal-kitchen").children(".modal-stars").children(".modal-center").children('img[src$=\"img/star.png\"]').last().attr("id"); 
     var interierMark = $("#modal-interier").children(".modal-stars").children(".modal-center").children('img[src$=\"img/star.png\"]').last().attr("id"); 
     var serviceMark = $("#modal-service").children(".modal-stars").children(".modal-center").children('img[src$=\"img/star.png\"]').last().attr("id");
-    if (generalMark==undefined) generalMark=0;
-    if (kitchenMark==undefined) kitchenMark=0;
-    if (interierMark==undefined) interierMark=0;
-    if (serviceMark==undefined) serviceMark=0;
     $.ajax({
         method: 'get',
         url: 'saveRestaurantRating',
@@ -259,5 +267,6 @@ var saveRating = function() {
     });
     doSort();
 };
+
 
 $(document).ready(main);

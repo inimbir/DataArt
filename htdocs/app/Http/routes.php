@@ -14,7 +14,9 @@ Route::get('test', function() {
     return view('test');
 });
 
-Route::get('/', 'RestController@main');
+Route::get('/', 'RestController@newpage');
+
+Route::get('main', 'RestController@main');
 
 Route::get('rating', 'RestController@rating');
 
@@ -45,6 +47,8 @@ Route::post('getRestInfo', 'RestController@getRestInfo');
 Route::post('countRests', 'RestController@countRests');
 
 Route::post('updateReview', 'RestController@updateReview');
+
+Route::get('deleteRest', 'RestController@deleteRest');
 
 Route::get('getCoords', function() {
     $id = Request::get('id');

@@ -1,4 +1,7 @@
 	var text = "";
+	var map;
+	var loaded;
+	var id=0;
 
 	$.ajaxSetup({
 		headers: {
@@ -20,8 +23,6 @@
 		});
 		cancel();
 	};
-
-	function initMap() {}
 
 	$(document).ready(function(){
 		$('#addPhoto').hide();
@@ -49,21 +50,11 @@
 		});
 	});
 	
-	$(window).on('load', function () {
+	function startMap() {
 		var $preloader = $('#page-preloader'),
 			$spinner   = $preloader.find('.spinner');
 		$spinner.fadeOut();
 		$preloader.delay(350).fadeOut('slow');
-		$("#gmap").load(startMap());
-	});
-
-	
-	var map;
-	var loaded;
-	var id=0;
-	
-	
-	function startMap() {
 		map = new google.maps.Map(document.getElementById('map'), {
 			center: {lat: -34.397, lng: 150.644},
 			zoom: 15
@@ -72,7 +63,7 @@
 	}
 
 	function drawMore() {
-		if (moveTo==0) {
+		if (moveTo==-1) {
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(function (position) {
 					var pos = {
@@ -131,6 +122,10 @@
 	
 	function addRest() {
 		$showRestInfo();
+		$('#userLabel').hide();
+		$('#RestReview').hide();
+		$('#ShareDiv').hide();
+		$('#slider').hide();
 		$('#addPhoto').hide();
 		$('#editReview').hide();
 		document.getElementById('RestInfo').innerHTML='';
@@ -171,9 +166,13 @@
 							if (data!=-1) {
 								alert("Ресторан успешно добавлен!");
 								Marker.setIcon(image);
-								Marker.setTitle(data);
+								Marker.setLabel(" " + data);
 								var mrk=Marker;
 								mrk.addListener('click', function() {
+									$('#userLabel').show(500);
+									$('#RestReview').show(500);
+									$('#ShareDiv').show(500);
+									$('#slider').show(500);
 									document.getElementById('addRest').disabled=false;
 									google.maps.event.removeListener(MarkerListener);
 									$showRestInfo();
@@ -181,7 +180,9 @@
 										Marker.setMap(null);
 										Marker=false;
 									}
-									id=mrk.getTitle();
+									id=mrk.getLabel();
+									id=id.substr(1, id.length-1);
+									window.location.hash = id;
 									document.getElementById('placingTip').innerHTML='';
 									document.getElementById('newRestInfo').innerHTML='';
 									$.ajax({
@@ -221,6 +222,10 @@
 	}
 	
 	function cancel() {
+		$('#userLabel').show(500);
+		$('#RestReview').show(500);
+		$('#ShareDiv').show(500);
+		$('#slider').show(500);
 		document.getElementById('addRest').disabled=false;
 		document.getElementById('saveNewRest').disabled=true;
 		google.maps.event.removeListener(MarkerListener);
@@ -248,72 +253,6 @@
 		document.getElementById('placingTip').innerHTML="Вы можете менять расположение ресторана<br> при помощи клика на карте!";
 	}
 	
-	function confirmReg() {
-		var Login=document.getElementById('regLogin').value;
-		var Password=document.getElementById('regPassword').value;
-		var PasswordConfirm=document.getElementById('regPasswordConfirm').value;
-		if (Login==""||Password==""||PasswordConfirm=="") alert("Заполните все поля!");
-		else {
-			if (Login.match(/^[a-z0-9]+$/i)&&Password.match(/^[a-z0-9]+$/i)) {
-				if (Password==PasswordConfirm) {
-					$.ajax({
-						method: 'post',
-						url: 'register',
-						data: {
-						'Login': Login,
-						'Password': Password,
-						'ajax': true
-						},
-						success: function(data) {
-							if (data==1) {
-								alert("Регистрация успешна!");
-								$("#popup").hide(1000);
-								location.reload();
-							}
-							if (data==-1) alert("Такой логин уже зарегистрирован!");
-						}
-					});
-				}
-				else alert("Пароли должны совпадать!");
-			}
-			else alert("Поля могут содержать только цифры и латинские буквы!");
-		}
-	}
-	
-	function signOut() {
-		$.ajax({
-			method: 'post',
-			url: 'signout',
-			data: {
-			'ajax': true
-			},
-			success: function(data) {
-				location.reload();
-			}
-		});
-	}
-	
-	function signIn() {
-		var Login=document.getElementById('fieldLogin').value;
-		var Password=document.getElementById('fieldPassword').value;
-		if (Login==""||Password=="") alert("Заполните все поля!");
-		$.ajax({
-			method: 'post',
-			url: 'signin',
-			data: {
-				'Login': Login,
-				'Password': Password
-			},
-			success: function(data) {
-				if (data==1) location.reload();
-				if (data==-1) alert("Неправильный логин/пароль!");
-			},
-			error: function(error) {
-				alert(error);
-			}
-		});
-	}
-	
 	function getRestaurants() {
 		var image = {
 			scaledSize: new google.maps.Size(32, 32),
@@ -330,7 +269,7 @@
 						position: new google.maps.LatLng(rest[2], rest[3]),
 						map: map,
 						icon: image,
-						title: rest[0],
+						label: " " + rest[0],
 						optimized: false
 					});
 					mrk.addListener('click', function() {
@@ -340,7 +279,12 @@
 							Marker.setMap(null);
 							Marker=false;
 						}
-						id=mrk.getTitle();
+						id=mrk.getLabel();
+						id=id.substr(1, id.length-1);
+						$('#userLabel').show(500);
+						$('#RestReview').show(500);
+						$('#ShareDiv').show(500);
+						$('#slider').show(500);
 						document.getElementById('placingTip').innerHTML='';
 						document.getElementById('newRestInfo').innerHTML='';
 						if (document.getElementById('userLabel').innerHTML!="0") {
@@ -351,6 +295,7 @@
 								text = d;
 							});
 						}
+						window.location.hash = id;
 						$.ajax({
 							method: 'post',
 							url: 'getRestInfo',
@@ -500,3 +445,16 @@
 		var title2 = title.substr(10);
 		Share.twitter('http://rest-manager.com','Увидел крутую рецензию на ресторан ' + title2 + " на этом сайте. ;)");
 	}
+
+function deleteRest() {
+  $.ajax({
+   method: 'get',
+   url: 'deleteRest',
+   data: {
+    'id': id
+   },
+   success: function() {
+    location.reload();
+   }
+  });
+ }

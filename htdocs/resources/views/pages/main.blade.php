@@ -6,7 +6,7 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>#RestaurantManager</title>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,400italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/style.css" media="all">
+    <link rel="stylesheet" href="css/style.css" media="all">
 	<link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="icon" type="image/png" href="favicon.ico">
@@ -29,46 +29,18 @@
 		background-size: contain;
 	}
 	</style>
-	<script>
-		var moveTo=0;
-		<?php
-		if (isset($id)) echo "moveTo=" . $id;
-		?>
-	</script>
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="js/slider.js"></script>
+	<script type="text/javascript" src="js/sharing.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE0G3dQnsjvZCkTF_6KR48M6hcN-8HuBM&callback=startMap"></script>
 </head>
 <body>
 	<div id="page-preloader"><span class="spinner"></span></div>
-	
-	<div id="popup">
-		<input class="regField" id="regLogin" type="text" placeholder="Логин" style=" margin-top: 8px;float:left;"><br>
-		<input class="regField" id="regPassword" type="password" placeholder="Пароль"style="margin-top: 8px; float:left;"><br>
-		<input class="regField" id="regPasswordConfirm" type="password" placeholder="Подтвердите пароль" style="margin-top: 8px; float:left;"><br>
-		<button id="confirm" onclick="confirmReg()"> Завершить </button>
-		<a href="#" id="close_popup" style="margin-top:8px; float:right;color: #000;">Отмена</a>
+
+	<div id="map">
+	    
 	</div>
-	
-	<div id="signup-panel">
-		<img id="logo" src="img/logo.png">
-		<div id="afterlogoname">#RestaurantManager</div>
-		<?php
-		if (isset($username)) {
-			$file = 'logged.html';
-			$file_contents = file_get_contents($file);
-			$file_contents = str_replace("#username", $username, $file_contents);
-			echo $file_contents;
-			if ($usertype==1) {
-				echo '<button class="signbutton" id="addRest" tabindex="0" onclick="addRest()">Добавить</div>';
-			}
-		}
-		else {
-			$file = 'notlogged.html';
-			$file_contents = file_get_contents($file);
-			echo $file_contents;
-		}
-		?>
-	</div>
-	
-	<div id="map"></div>
 	<div id="fullPhoto"><img></div>
 	<div id="list">
 		<img id="closeList" src="img/closeList.png"></img>
@@ -76,8 +48,8 @@
 		<div id="placingTip"></div>
 		<div id="newRestInfo"></div>
 		<div id="RestInfo" style="word-wrap: break-word;"></div>
-		<div class="container">
-			<div id='slider' style='margin-top:5px;background: rgba(255, 255, 255, 1);'>
+		<div class="container" style="margin-left:6em;">
+			<div id='slider' style='background: rgba(255, 255, 255, 1);'>
 				<ul>
 				</ul>
 			</div>
@@ -92,7 +64,7 @@
 		<?php
 		if(isset($usertype)&&$usertype==1) echo '<button style="margin-top:5px;float:none;" id="editReview" class="signbutton" onclick="editReview()">Изменить рецензию</button><button style="margin-top:5px;float:none;" id="saveReview" class="signbutton" onclick="saveReview()">Сохранить</button>';
 		?>
-		<div>
+		<div id="ShareDiv">
 			<br>
 			Поделиться рецензией:
 			<a onclick="shareVK()"><img style="width: 35px;" src="img/share/logo_vk.png"></a>
@@ -100,12 +72,7 @@
 			<a onclick="shareTW()"><img style="width: 35px;" src="img/share/logo_tw.png"></i></a>
 		</div>
 	</div>
-	
+
 	<input style="width:0px;height:0px;" type="file" id="Upload" onChange="uploadPhoto()" accept="image/*" tabindex="-1">
 </body>
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="js/slider.js"></script>
-	<script type="text/javascript" src="js/sharing.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script id="gmap" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE0G3dQnsjvZCkTF_6KR48M6hcN-8HuBM&callback=initMap"></script>
 </html>

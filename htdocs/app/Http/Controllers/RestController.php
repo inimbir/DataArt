@@ -22,6 +22,16 @@ class RestController extends Controller
         }
         return view('pages.main');
     }
+    
+    public function newpage() {
+        if (Session::has('username')) {
+            return view('pages.newpage')->with([
+                'username' => Session::get('username'),
+                'usertype' => Session::get('usertype')
+            ]);
+        }
+        return view('pages.newpage');
+    }
 
     public function rating() {
         if (Session::has('username')) {
@@ -128,5 +138,9 @@ class RestController extends Controller
     public function loadRestaurantsSortedByService() {
         $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, "img/2.jpg" as img from restaurants order by ratingService desc');
         return json_encode($results);
+    }
+    
+    public function deleteRest() {
+        DB::delete('delete from restaurants where id=?', [Request::get('id')]);
     }
 }

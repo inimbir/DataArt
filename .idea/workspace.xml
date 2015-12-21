@@ -1,55 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1452aacf-eed2-47ae-ba0f-35152910d223" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/img/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/photos/12/af4556247c0a021413164200016.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/img/bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/img/bg1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/img/logo-rating.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/img/map.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/photos/nopic.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/img/phone.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/img/rsLp6_kfgb8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/img/star-empty.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/img/star.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/img/star2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/resources/views/test.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/zz.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/.idea/blade.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/.idea/htdocs.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/css/rate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/js/stars.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/.idea/workspace.xml" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\9\4.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/favicon.ico" afterPath="$PROJECT_DIR$/htdocs/rest/favicon.ico" />
+    <list default="true" id="1452aacf-eed2-47ae-ba0f-35152910d223" name="Default" comment="One-page application + hash on click">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/photos/14/ELdvyG3axAs.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/photos/14/HR3fVgp6.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/bdController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/img/delete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/img/edit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/img/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/img/logo1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/photos/16/pirozhki.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/photos/12/rsLp6_kfgb8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/js/jquery-2.1.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/loggedrate.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-battles.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-battlesparticipant.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-countries.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-events.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-eventsparticipant.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-government.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-journal.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-main.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-persons.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-requests.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/resources/views/pages/newpage.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/css/newrate.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/js/newrating.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/notloggedrate.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/print.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/reg.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/regLogController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/js/request.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/request.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/requestsController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/restaurantmanagerbd.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/css/style.css" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\zz.zip" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/img/closeList.png" afterPath="$PROJECT_DIR$/htdocs/rest/img/closeList.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/photos/nopic.png" afterPath="$PROJECT_DIR$/htdocs/rest/photos/nopic.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/app/Http/Controllers/RestController.php" afterPath="$PROJECT_DIR$/htdocs/app/Http/Controllers/RestController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/resources/views/pages/main.blade.php" afterPath="$PROJECT_DIR$/htdocs/resources/views/pages/main.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/js/main.js" afterPath="$PROJECT_DIR$/htdocs/rest/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/css/rate.css" afterPath="$PROJECT_DIR$/htdocs/rest/css/rate.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/resources/views/pages/rating.blade.php" afterPath="$PROJECT_DIR$/htdocs/resources/views/pages/rating.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/js/rating.js" afterPath="$PROJECT_DIR$/htdocs/rest/js/rating.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/app/Http/routes.php" afterPath="$PROJECT_DIR$/htdocs/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/css/style.css" afterPath="$PROJECT_DIR$/htdocs/rest/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/.idea/workspace.xml" afterPath="$PROJECT_DIR$/htdocs/.idea/workspace.xml" />
     </list>
     <ignored path="DataArt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -173,6 +174,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -291,9 +294,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -574,7 +575,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448457167088</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="New rating page, show on map button and other">
+      <created>1450622458879</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1450622458879</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -646,7 +653,8 @@
     <MESSAGE value="Rating page got lost. Found it and placed it back." />
     <MESSAGE value="Laravel fixes" />
     <MESSAGE value="Garbage deleted" />
-    <option name="LAST_COMMIT_MESSAGE" value="Garbage deleted" />
+    <MESSAGE value="New rating page, show on map button and other" />
+    <option name="LAST_COMMIT_MESSAGE" value="New rating page, show on map button and other" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -657,6 +665,30 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/htdocs/rest/rating.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/htdocs/resources/views/pages/rating.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/htdocs/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/htdocs/rest/rating.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
