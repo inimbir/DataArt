@@ -1,53 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1452aacf-eed2-47ae-ba0f-35152910d223" name="Default" comment="One-page application + hash on click">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/photos/14/ELdvyG3axAs.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/photos/14/HR3fVgp6.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/bdController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/img/delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/img/edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/img/logo1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/photos/16/pirozhki.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/photos/12/rsLp6_kfgb8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/js/jquery-2.1.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/loggedrate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-battles.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-battlesparticipant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-countries.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-events.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-eventsparticipant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-government.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-journal.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-main.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-persons.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/pages/menu-requests.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/resources/views/pages/newpage.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/css/newrate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/js/newrating.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/rest/notloggedrate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/print.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/reg.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/regLogController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/js/request.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/request.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/requestsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/restaurantmanagerbd.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/htdocs/bd_kurs/css/style.css" />
-      <change type="DELETED" beforePath="D:\dataart\htdocs\zz.zip" afterPath="" />
+    <list default="true" id="1452aacf-eed2-47ae-ba0f-35152910d223" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restaurantmanagerbd.sql" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\bdController.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\css\style.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\img\delete.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\img\edit.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\img\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\img\logo1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\index.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\js\jquery-2.1.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\js\main.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\js\request.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\pages\menu-battles.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\pages\menu-battlesparticipant.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\pages\menu-countries.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\pages\menu-events.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\pages\menu-eventsparticipant.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\pages\menu-government.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\pages\menu-journal.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\pages\menu-main.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\pages\menu-persons.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\pages\menu-requests.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\print.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\reg.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\regLogController.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\request.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\bd_kurs\requestsController.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\css\rating.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\12\af4556247c0a021413164200016.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\12\rsLp6_kfgb8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\14\ELdvyG3axAs.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\14\HR3fVgp6.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="D:\dataart\htdocs\rest\photos\16\pirozhki.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/img/closeList.png" afterPath="$PROJECT_DIR$/htdocs/rest/img/closeList.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/photos/nopic.png" afterPath="$PROJECT_DIR$/htdocs/rest/photos/nopic.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/app/Http/Controllers/RestController.php" afterPath="$PROJECT_DIR$/htdocs/app/Http/Controllers/RestController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/resources/views/pages/main.blade.php" afterPath="$PROJECT_DIR$/htdocs/resources/views/pages/main.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/js/main.js" afterPath="$PROJECT_DIR$/htdocs/rest/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/resources/views/pages/newpage.blade.php" afterPath="$PROJECT_DIR$/htdocs/resources/views/pages/newpage.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/css/newrate.css" afterPath="$PROJECT_DIR$/htdocs/rest/css/newrate.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/css/rate.css" afterPath="$PROJECT_DIR$/htdocs/rest/css/rate.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/resources/views/pages/rating.blade.php" afterPath="$PROJECT_DIR$/htdocs/resources/views/pages/rating.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/js/rating.js" afterPath="$PROJECT_DIR$/htdocs/rest/js/rating.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/app/Http/routes.php" afterPath="$PROJECT_DIR$/htdocs/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/rest/css/style.css" afterPath="$PROJECT_DIR$/htdocs/rest/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/.idea/workspace.xml" afterPath="$PROJECT_DIR$/htdocs/.idea/workspace.xml" />
@@ -93,11 +89,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/htdocs/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49066213">
+            <state vertical-scroll-proportion="0.0">
               <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/htdocs/app/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,6 +180,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -194,107 +201,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataArt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dataart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataArt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dataart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataArt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dataart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataArt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dataart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataArt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dataart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -581,7 +489,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450622458879</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="One-page application + hash on click">
+      <created>1450717192168</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1450717192168</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -654,7 +568,8 @@
     <MESSAGE value="Laravel fixes" />
     <MESSAGE value="Garbage deleted" />
     <MESSAGE value="New rating page, show on map button and other" />
-    <option name="LAST_COMMIT_MESSAGE" value="New rating page, show on map button and other" />
+    <MESSAGE value="One-page application + hash on click" />
+    <option name="LAST_COMMIT_MESSAGE" value="One-page application + hash on click" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -665,6 +580,38 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/htdocs/rest/rating.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/htdocs/resources/views/pages/rating.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/htdocs/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/htdocs/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/htdocs/rest/rating.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -800,8 +747,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/htdocs/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49066213">
+        <state vertical-scroll-proportion="0.0">
           <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/htdocs/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

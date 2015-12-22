@@ -25,6 +25,9 @@
 	};
 
 	$(document).ready(function(){
+		$('#map').css('height', $(window).height() - $('.header').height() + "px");
+		$('#list').css('top', $('.header').height() + "px");
+		$('#list').css('height', $(window).height() - $('.header').height() + "px");
 		$('#addPhoto').hide();
 		$('#editReview').hide();
 		$('#saveReview').hide();
@@ -49,7 +52,13 @@
 			}
 		});
 	});
-	
+
+	$( window ).resize(function() {
+		$('#map').css('height', $(window).height() - $('.header').height() + "px");
+		$('#list').css('top', $('.header').height() + "px");
+		$('#list').css('height', $(window).height() - $('.header').height() + "px");
+	});
+
 	function startMap() {
 		var $preloader = $('#page-preloader'),
 			$spinner   = $preloader.find('.spinner');
@@ -222,6 +231,7 @@
 	}
 	
 	function cancel() {
+		window.location.hash = "";
 		$('#userLabel').show(500);
 		$('#RestReview').show(500);
 		$('#ShareDiv').show(500);
@@ -429,7 +439,7 @@
 		var title2 = title.substr(10);
 		var review = document.getElementById('RestReview').innerHTML;
 		var review2 = review.substr(22);
-		Share.vkontakte('http://rest-manager.com',title2,'IMG_PATH',review2);
+		Share.vkontakte('http://resojlda.pe.hu/#' + id,title2,'IMG_PATH',review2);
 	}
 	
 	function shareFB() {
@@ -437,24 +447,27 @@
 		var title2 = title.substr(10);
 		var review = document.getElementById('RestReview').innerHTML;
 		var review2 = review.substr(22);
-		Share.facebook('http://rest-manager.com/',title2,'IMG_PATH',review2);
+		Share.facebook('http://resojlda.pe.hu/#' + id,title2,'IMG_PATH',review2);
 	}
 	
 	function shareTW() {
 		var title = document.getElementById('RestInfo').innerHTML;
 		var title2 = title.substr(10);
-		Share.twitter('http://rest-manager.com','Увидел крутую рецензию на ресторан ' + title2 + " на этом сайте. ;)");
+		Share.twitter('http://resojlda.pe.hu/#' + id,'Увидел крутую рецензию на ресторан ' + title2 + " на этом сайте. ;)");
 	}
 
 function deleteRest() {
-  $.ajax({
-   method: 'get',
-   url: 'deleteRest',
-   data: {
-    'id': id
-   },
-   success: function() {
-    location.reload();
-   }
-  });
- }
+	 if (confirm("Вы действительно хотите удалить данный ресторан?")) {
+		window.location.hash = "";
+		$.ajax({
+			method: 'get',
+			url: 'deleteRest',
+			data: {
+				'id': id
+			},
+			success: function () {
+				location.reload();
+			}
+		});
+	}
+ }	

@@ -121,22 +121,42 @@ class RestController extends Controller
     }
 
     public function loadRestaurantsSortedByGeneral() {
-        $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, "img/2.jpg" as img from restaurants order by ratingWhole desc');
+        $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, img from restaurants
+        left join (select idR,filename as img from photos) t on restaurants.id=t.idR group by id order by ratingWhole desc');
+        foreach ($results as $result) {
+            if ($result->img==null) $result->img="img/2.jpg";
+            else $result->img="photos/" . $result->id . "/" . $result->img;
+        }
         return json_encode($results);
     }
 
     public function loadRestaurantsSortedByKitchen() {
-        $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, "img/2.jpg" as img from restaurants order by ratingKitchen desc');
+        $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, img from restaurants
+        left join (select idR,filename as img from photos) t on restaurants.id=t.idR group by id order by ratingKitchen desc');
+        foreach ($results as $result) {
+            if ($result->img==null) $result->img="img/2.jpg";
+            else $result->img="photos/" . $result->id . "/" . $result->img;
+        }
         return json_encode($results);
     }
 
     public function loadRestaurantsSortedByInterier() {
-        $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, "img/2.jpg" as img from restaurants order by ratingInterier desc');
+        $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, img from restaurants
+        left join (select idR,filename as img from photos) t on restaurants.id=t.idR group by id order by ratingInterier desc');
+        foreach ($results as $result) {
+            if ($result->img==null) $result->img="img/2.jpg";
+            else $result->img="photos/" . $result->id . "/" . $result->img;
+        }
         return json_encode($results);
     }
 
     public function loadRestaurantsSortedByService() {
-        $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, "img/2.jpg" as img from restaurants order by ratingService desc');
+        $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, img from restaurants
+        left join (select idR,filename as img from photos) t on restaurants.id=t.idR group by id order by ratingService desc');
+        foreach ($results as $result) {
+            if ($result->img==null) $result->img="img/2.jpg";
+            else $result->img="photos/" . $result->id . "/" . $result->img;
+        }
         return json_encode($results);
     }
     

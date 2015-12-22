@@ -8,11 +8,34 @@
         <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
         <!-- Optional theme -->
         <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous"> -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css" type=text/css>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css" type=text/css>
         <link rel="stylesheet" href="css/newrate.css" type=text/css>
+        <link rel="stylesheet" href="css/style.css" type=text/css>
+        <link rel="stylesheet" href="css/slider.css" type=text/css>
         <link rel="icon" type="image/png" href="favicon.ico">
         <!-- Latest compiled and minified JavaScript -->
+        <style>
+            #page-preloader {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 100500;
+                background: rgba(255, 255, 255, .5);
+            }
+
+            #page-preloader .spinner {
+                height: 10%;
+                width: 10%;
+                position: absolute;
+                left: 49%;
+                top: 47%;
+                background: url('img/loading.gif') no-repeat;
+                background-size: contain;
+            }
+        </style>
         <script>
             var admin=0;
             var moveTo;
@@ -23,7 +46,7 @@
                 moveTo=-1;
             }
             <?php
-                if(isset($usertype)) echo 'admin = ' . $usertype . ';';
+            if(isset($usertype)) echo 'admin = ' . $usertype . ';';
             ?>
         </script>
         <script type="text/javascript" src="js/jquery-1.11.3.js"></script>

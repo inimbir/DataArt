@@ -8,16 +8,6 @@ var restaurants;
 var idR;
 
 var main = function() {
-/*    var json = [
-        {"id":2, "name":"Токио хаус", "img":"img/2.jpg", "generalMark":3.7, "kitchenMark":4, "interierMark":3, "serviceMark":4, "address":"Решильевская 22 Решильевская 22 Решильевская 22", review:"kek1"},
-        {"id":3,"name":"Токио хаус", "img":"img/2.jpg", "generalMark":3.7, "kitchenMark":4, "interierMark":3, "serviceMark":4, "address":"Решильевская 22", review:"kek2"},
-        {"id":5,"name":"Токио хаус", "img":"img/2.jpg", "generalMark":3.7, "kitchenMark":4, "interierMark":3, "serviceMark":4, "address":"Решильевская 22", review:"kek3"},
-        {"id":11,"name":"Токио хаус", "img":"img/2.jpg", "generalMark":3.7, "kitchenMark":4, "interierMark":3, "serviceMark":4, "address":"Решильевская 22", review:"kek4"},
-        {"id":13,"name":"Токио хаус", "img":"img/2.jpg", "generalMark":3.7, "kitchenMark":4, "interierMark":3, "serviceMark":4, "address":"Решильевская 22", review:"kek5"},
-        {"id":23,"name":"Токио хаус", "img":"img/2.jpg", "generalMark":3.7, "kitchenMark":4, "interierMark":3, "serviceMark":4, "address":"Решильевская 22", review:"kek6"},
-        {"id":48,"name":"Токио хаус", "img":"img/2.jpg", "generalMark":3.7, "kitchenMark":4, "interierMark":3, "serviceMark":4, "address":"Решильевская 22", review:"kek7"},
-        {"id":51,"name":"Токио хаус", "img":"img/2.jpg", "generalMark":3.7, "kitchenMark":4, "interierMark":3, "serviceMark":4, "address":"Решильевская 22", review:"kek8"}
-    ];*/
     sortButtonGeneral();
     $("#general").click(sortButtonGeneral);
     $("#kitchen").click(sortButtonKitchen);
@@ -32,7 +22,6 @@ var showModal = function() {
     var id = $(this).parent().parent().attr("id");
     $(".modal-title").text(restaurants[id].name);
     $(".modal-body").children(".container.image").children("img").attr("src", restaurants[id].img);
-
     $("#modal-general").children(".modal-stars").children(".modal-center").empty();
     $("#modal-kitchen").children(".modal-stars").children(".modal-center").empty();
     $("#modal-interier").children(".modal-stars").children(".modal-center").empty();
