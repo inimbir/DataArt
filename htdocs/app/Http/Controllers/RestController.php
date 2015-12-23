@@ -14,6 +14,7 @@ class RestController extends Controller
     }
 
     public function main() {
+        session()->regenerate();
         if (Session::has('username')) {
             return view('pages.main')->with([
                 'username' => Session::get('username'),
@@ -24,6 +25,7 @@ class RestController extends Controller
     }
     
     public function newpage() {
+        session()->regenerate();
         if (Session::has('username')) {
             return view('pages.newpage')->with([
                 'username' => Session::get('username'),
@@ -34,6 +36,7 @@ class RestController extends Controller
     }
 
     public function rating() {
+        session()->regenerate();
         if (Session::has('username')) {
             return view('pages.rating')->with([
                 'username' => Session::get('username'),
@@ -68,6 +71,7 @@ class RestController extends Controller
     }
 
     public function uploadPhoto() {
+        session()->regenerate();
         $file = Request::file('0');
         $filename = Str::ascii($file->getClientOriginalName());
         $id = Request::get("id");
@@ -76,6 +80,7 @@ class RestController extends Controller
     }
 
     public function saveRest() {
+        session()->regenerate();
         $name = Request::get('Name');
         $lat = Request::get('lat');
         $lng = Request::get('lng');
@@ -88,6 +93,7 @@ class RestController extends Controller
     }
 
     public function loadPhotos() {
+        session()->regenerate();
         $rows = DB::select('select filename from photos where idR=?', [Request::get('id')]);
         if ($rows!=[]) {
             $result = "";
@@ -97,6 +103,7 @@ class RestController extends Controller
         return "../nopic.png";
     }
     public function loadRestaurantsForMap() {
+        session()->regenerate();
         $rows = DB::select('select id, name, lat, lng from restaurants');
         $result = "";
         foreach ($rows as $row) $result = ($result . $row->id . ',' . $row->name . ',' . $row->lat . ',' . $row->lng . '|');
@@ -104,11 +111,13 @@ class RestController extends Controller
     }
 
     public function getRestInfo() {
+        session()->regenerate();
         $result = DB::select('SELECT name, review FROM restaurants WHERE id=?', [Request::get('id')]);
         return ($result[0]->name . '|' . $result[0]->review);
     }
 
     public function countRests() {
+        session()->regenerate();
         $rows = DB::select('SELECT id FROM restaurants');
         $result = "";
         foreach ($rows as $row) $result = $result . $row->id . '.';
@@ -117,10 +126,12 @@ class RestController extends Controller
 
     public function updateReview()
     {
+        session()->regenerate();
         DB::update('update restaurants set review=? where id=?', [Request::get('review'), Request::get('id')]);
     }
 
     public function loadRestaurantsSortedByGeneral() {
+        session()->regenerate();
         $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, img from restaurants
         left join (select idR,filename as img from photos) t on restaurants.id=t.idR group by id order by ratingWhole desc');
         foreach ($results as $result) {
@@ -131,6 +142,7 @@ class RestController extends Controller
     }
 
     public function loadRestaurantsSortedByKitchen() {
+        session()->regenerate();
         $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, img from restaurants
         left join (select idR,filename as img from photos) t on restaurants.id=t.idR group by id order by ratingKitchen desc');
         foreach ($results as $result) {
@@ -141,6 +153,7 @@ class RestController extends Controller
     }
 
     public function loadRestaurantsSortedByInterier() {
+        session()->regenerate();
         $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, img from restaurants
         left join (select idR,filename as img from photos) t on restaurants.id=t.idR group by id order by ratingInterier desc');
         foreach ($results as $result) {
@@ -151,6 +164,7 @@ class RestController extends Controller
     }
 
     public function loadRestaurantsSortedByService() {
+        session()->regenerate();
         $results = DB::select('select id, name, review, adress as address, ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark, img from restaurants
         left join (select idR,filename as img from photos) t on restaurants.id=t.idR group by id order by ratingService desc');
         foreach ($results as $result) {
@@ -161,6 +175,7 @@ class RestController extends Controller
     }
     
     public function deleteRest() {
+        session()->regenerate();
         DB::delete('delete from restaurants where id=?', [Request::get('id')]);
     }
 }

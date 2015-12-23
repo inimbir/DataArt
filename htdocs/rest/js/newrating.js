@@ -7,8 +7,6 @@ $.ajaxSetup({
 var main = function() {
     popUp();
     $("#mapBlock").load("main");
-    $("#ratingBlock").load("rating");
-    $("#ratingBlock").hide();
 };
 
 function signIn() {
@@ -115,6 +113,7 @@ function setRating() {
     $("#ratingBlock").load('rating');
     $("#ratingBlock").show();
     $("#addRest").hide();
+    $hideRestInfo();
 }
 
 $(document).ready(main);

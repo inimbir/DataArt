@@ -50,7 +50,14 @@ Route::post('updateReview', 'RestController@updateReview');
 
 Route::get('deleteRest', 'RestController@deleteRest');
 
+Route::get('loadRestaurantMarks', function() {
+    session()->regenerate();
+    $results = DB::select('select ratingWhole as generalMark, ratingKitchen as kitchenMark, ratingInterier as interierMark, ratingService as serviceMark from restaurants where id=?', [Request::get('id')]);
+    return json_encode($results);
+});
+
 Route::get('getCoords', function() {
+    session()->regenerate();
     $id = Request::get('id');
     $results = DB::select('select lat, lng from restaurants where id = ?', [$id]);
     if ($results == []) return 0;
@@ -59,6 +66,7 @@ Route::get('getCoords', function() {
 });
 
 Route::get('getAdr/{adr}', function($adr) {
+    session()->regenerate();
     $adr = explode(',', $adr);
     $json = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?latlng=' . $adr[0] . ',' . $adr[1] . '&sensor=true&language=ru');
     return $json;
@@ -76,6 +84,7 @@ Route::get('getLabel', function() {
 });
 
 Route::get('setLabel', function() {
+    session()->regenerate();
     $id = Request::get("id");
     $text = Request::get("text");
     $user = Session::get('username');
@@ -87,6 +96,7 @@ Route::get('isAdmin', function() {
 });
 
 Route::get('showOnMap', function() {
+    session()->regenerate();
     if (Session::has('username')) {
         return view('pages.main')->with([
             'username' => Session::get('username'),
@@ -100,6 +110,7 @@ Route::get('showOnMap', function() {
 });
 
 Route::get('saveRestaurantRating', function() {
+    session()->regenerate();
     DB::update("update restaurants set ratingWhole=?, ratingKitchen=?, ratingInterier=?, ratingService=? where id=?", [
             Request::get('generalMark'),
             Request::get('kitchenMark'),
@@ -107,4 +118,42 @@ Route::get('saveRestaurantRating', function() {
             Request::get('serviceMark'),
             Request::get('idR')
     ]);
+});
+
+Route::get('setRestaurantMark', function() {
+    session()->regenerate();
+    switch(Request::get('markType')) {
+        case "general":
+            DB::update("update restaurants set ratingWhole=? where id=?", [
+                Request::get('rate'),
+                Request::get('id')
+            ]);
+            break;
+        case "kitchen":
+            DB::update("update restaurants set ratingKitchen=? where id=?", [
+                Request::get('rate'),
+                Request::get('id')
+            ]);
+            break;
+        case "interior":
+            DB::update("update restaurants set ratingInterier=? where id=?", [
+                Request::get('rate'),
+                Request::get('id')
+            ]);
+            break;
+        case "service":
+            DB::update("update restaurants set ratingService=? where id=?", [
+                Request::get('rate'),
+                Request::get('id')
+            ]);
+            break;
+    }
+/*
+    DB::update("update restaurants set ratingWhole=?, ratingKitchen=?, ratingInterier=?, ratingService=? where id=?", [
+        Request::get('generalMark'),
+        Request::get('kitchenMark'),
+        Request::get('interierMark'),
+        Request::get('serviceMark'),
+        Request::get('idR')
+    ]);*/
 });

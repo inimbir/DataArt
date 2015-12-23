@@ -9,7 +9,9 @@ function loadSlider() {
 	  $(obj).find(".nav").append("<div class='next'><img src='img/next.png'></div>");
 	  $(obj).find(".nav").append("<div class='prev'><img src='img/prev.png'></div>");
 	});
-};
+	$('#slider ul li').css('width', $('#slider').width() + 'px');
+	$('#slider .nav div img').css('margin-top', $('#slider .nav div').height()*0.45);
+}
 
 function slide (str, sl) { 
 	var ul = $(sl).find("ul"); 
@@ -33,12 +35,12 @@ function slide (str, sl) {
 	var num = $(newActive).attr("id");
 	
 	$(ul).animate({marginLeft: "-"+step*num}, 500);
-};
+}
 function fullPh() {
 	var str = $('.on').html();
 	str = str.substring(24, str.length-2);
 	$("#fullPhoto img").attr('src', str);
-};
+}
 $(document).on("click", "#slider .nav .prev", function() {
 	var sl = $(this).closest("#slider");
 	slide("prev", sl);

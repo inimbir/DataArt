@@ -200,8 +200,8 @@
 }
 
 #username {
-    display:block;
-    float:right;
+    display: block;
+    float: right;
     font-weight:500;
     font-size: 1.5em;
     margin: 0;
@@ -246,6 +246,8 @@
 .content > .image {
     width: 100%;
     max-width: 400px;
+    min-height: 230px;
+    max-height: 230px;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -253,7 +255,8 @@
 
 .content > .image > img {
     width: 100%;
-    height: auto;
+    min-height: 230px;
+    max-height: 230px;
     margin 0;
     padding: 0;
 }
@@ -268,6 +271,7 @@
     transition: all .4s;
     cursor:pointer;
 }
+
 /*.container.image .image-over {
     background-color:rgba(0, 160, 150, 0);
     width:100%;

@@ -11,7 +11,7 @@
 
 	$showRestInfo = function() {
 		$('#list').animate({
-			left:'70%'
+			left:'72%'
 		});
 		$('#addPhoto').show();
 		$('#editReview').show();
@@ -57,6 +57,8 @@
 		$('#map').css('height', $(window).height() - $('.header').height() + "px");
 		$('#list').css('top', $('.header').height() + "px");
 		$('#list').css('height', $(window).height() - $('.header').height() + "px");
+		$('#slider ul li').css('width', $('#slider').width() + 'px');
+		$('#slider .nav div img').css('margin-top', $('#slider .nav div').height()*0.45);
 	});
 
 	function startMap() {
@@ -137,6 +139,7 @@
 		$('#slider').hide();
 		$('#addPhoto').hide();
 		$('#editReview').hide();
+		$('#marks').hide();
 		document.getElementById('RestInfo').innerHTML='';
 		document.getElementById('placingTip').innerHTML="Вы можете установить расположение нового ресторана при помощи клика на карте!";
 		MarkerListener = google.maps.event.addListener(map, 'click', function(event) {
@@ -182,6 +185,7 @@
 									$('#RestReview').show(500);
 									$('#ShareDiv').show(500);
 									$('#slider').show(500);
+									$('#marks').show(500);
 									document.getElementById('addRest').disabled=false;
 									google.maps.event.removeListener(MarkerListener);
 									$showRestInfo();
@@ -191,6 +195,7 @@
 									}
 									id=mrk.getLabel();
 									id=id.substr(1, id.length-1);
+									setListMarks();
 									window.location.hash = id;
 									document.getElementById('placingTip').innerHTML='';
 									document.getElementById('newRestInfo').innerHTML='';
@@ -236,6 +241,7 @@
 		$('#RestReview').show(500);
 		$('#ShareDiv').show(500);
 		$('#slider').show(500);
+		$('#marks').show(500);
 		document.getElementById('addRest').disabled=false;
 		document.getElementById('saveNewRest').disabled=true;
 		google.maps.event.removeListener(MarkerListener);
@@ -291,10 +297,12 @@
 						}
 						id=mrk.getLabel();
 						id=id.substr(1, id.length-1);
+						setListMarks();
 						$('#userLabel').show(500);
 						$('#RestReview').show(500);
 						$('#ShareDiv').show(500);
 						$('#slider').show(500);
+						$('#marks').show(500);
 						document.getElementById('placingTip').innerHTML='';
 						document.getElementById('newRestInfo').innerHTML='';
 						if (document.getElementById('userLabel').innerHTML!="0") {
@@ -471,3 +479,105 @@ function deleteRest() {
 		});
 	}
  }	
+
+var setListMarks = function() {
+	$.ajax({
+		method: 'get',
+		url: 'loadRestaurantMarks',
+		dataType: 'json',
+		data: {
+			'id': id
+		},
+		success: function(restaurants) {
+			$("#general-stars").empty();
+			$("#kitchen-stars").empty();
+			$("#interior-stars").empty();
+			$("#service-stars").empty();
+			if (admin==0) {
+				for (var i = 1; i <= 5; i++) {
+					if (i <= Math.round(restaurants[0].generalMark))
+						$("#general-stars").append('<img id="'+i+'"src="img/star.png" class="star img-responsive">');
+
+					if (i <= Math.round(restaurants[0].kitchenMark))
+						$("#kitchen-stars").append('<img id="'+i+'"src="img/star.png" class="star img-responsive">');
+
+					if (i <= Math.round(restaurants[0].interierMark))
+						$("#interior-stars").append('<img id="'+i+'"src="img/star.png" class="star img-responsive">');
+
+					if (i <= Math.round(restaurants[0].serviceMark))
+						$("#service-stars").append('<img id="'+i+'"src="img/star.png" class="star img-responsive">');
+				}
+			}
+			else {
+				for (var i = 1; i <= 5; i++) {
+					if (i <= Math.round(restaurants[0].generalMark))
+						$("#general-stars").append('<img id="'+i+'"src="img/star.png" class="star img-responsive">');
+					else
+						$("#general-stars").append('<img id="'+i+'"src="img/star-empty.png" class="star img-responsive">');
+
+					if (i <= Math.round(restaurants[0].kitchenMark))
+						$("#kitchen-stars").append('<img id="'+i+'"src="img/star.png" class="star img-responsive">');
+					else
+						$("#kitchen-stars").append('<img id="'+i+'"src="img/star-empty.png" class="star img-responsive">');
+
+					if (i <= Math.round(restaurants[0].interierMark))
+						$("#interior-stars").append('<img id="'+i+'"src="img/star.png" class="star img-responsive">');
+					else
+						$("#interior-stars").append('<img id="'+i+'"src="img/star-empty.png" class="star img-responsive">');
+
+					if (i <= Math.round(restaurants[0].serviceMark))
+						$("#service-stars").append('<img id="'+i+'"src="img/star.png" class="star img-responsive">');
+					else
+						$("#service-stars").append('<img id="'+i+'"src="img/star-empty.png" class="star img-responsive">');
+				}
+				readyStars();
+			}
+		}
+	});
+};
+
+var fillStar = function (crit, q) {
+	var stars = $('#' + crit).children(".star");
+    
+	for (i=0; i<q; i++) {
+			$(stars[i]).attr("src", "img/star.png");
+		}
+    
+	for (i=5; i>=q; i--) {
+			$(stars[i]).attr("src", "img/star-empty.png");
+	}
+};
+
+var readyStars = function() {
+    var rate = 0;
+    $('.p-stars').mouseenter(function(){
+        rate = $(this).children('img[src$=\"img/star.png\"]').last().attr("id");
+        if (rate == undefined) rate = 0;
+    });
+
+    $('.p-stars').mouseleave(function(){
+        var crit = $(this).attr("id");
+		fillStar(crit, rate);
+        rate = 0;
+	});
+
+	$('.star').mouseenter(function(){
+		var ind = $(this).attr("id");
+        var crit = $(this).parent().attr("id");
+		fillStar(crit, ind);
+	});
+
+	$('.star').click(function(){
+		rate = $(this).attr("id");
+		var critName = $(this).parent().attr("id").split("-")[0];
+		$.ajax({
+			method: 'get',
+			url: 'setRestaurantMark',
+			data: {
+				'id': id,
+				'markType': critName,
+				'rate': rate
+			}
+		});
+	});
+};

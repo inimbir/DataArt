@@ -21,24 +21,24 @@ var showModal = function() {
     idR = $(this).children().attr('data-id');
     var id = $(this).parent().parent().attr("id");
     $(".modal-title").text(restaurants[id].name);
-    $(".modal-body").children(".container.image").children("img").attr("src", restaurants[id].img);
-    $("#modal-general").children(".modal-stars").children(".modal-center").empty();
-    $("#modal-kitchen").children(".modal-stars").children(".modal-center").empty();
-    $("#modal-interier").children(".modal-stars").children(".modal-center").empty();
-    $("#modal-service").children(".modal-stars").children(".modal-center").empty();
+    $(".modal-body").find("img").attr("src", restaurants[id].img);
+    $("#modal-general").find(".modal-center").empty();
+    $("#modal-kitchen").find(".modal-center").empty();
+    $("#modal-interier").find(".modal-center").empty();
+    $("#modal-service").find(".modal-center").empty();
     if (admin==0) {
         for (var i = 1; i <= 5; i++) {
             if (i <= Math.round(restaurants[id].generalMark))
-                $("#modal-general").children(".modal-stars").children(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
+                $("#modal-general").find(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
 
             if (i <= Math.round(restaurants[id].kitchenMark))
-                $("#modal-kitchen").children(".modal-stars").children(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
+                $("#modal-kitchen").find(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
 
             if (i <= Math.round(restaurants[id].interierMark))
-                $("#modal-interier").children(".modal-stars").children(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
+                $("#modal-interier").find(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
 
             if (i <= Math.round(restaurants[id].serviceMark))
-                $("#modal-service").children(".modal-stars").children(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
+                $("#modal-service").find(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
         }
 
         $(".modal-body").children("p").text(restaurants[id].review);
@@ -48,24 +48,24 @@ var showModal = function() {
     else {
         for (var i = 1; i <= 5; i++) {
             if (i <= Math.round(restaurants[id].generalMark))
-                $("#modal-general").children(".modal-stars").children(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
+                $("#modal-general").find(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
             else
-                $("#modal-general").children(".modal-stars").children(".modal-center").append('<img id="'+i+'"src="img/star-empty.png" class="modal-star img-responsive">');
+                $("#modal-general").find(".modal-center").append('<img id="'+i+'"src="img/star-empty.png" class="modal-star img-responsive">');
 
             if (i <= Math.round(restaurants[id].kitchenMark))
-                $("#modal-kitchen").children(".modal-stars").children(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
+                $("#modal-kitchen").find(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
             else
-                $("#modal-kitchen").children(".modal-stars").children(".modal-center").append('<img id="'+i+'"src="img/star-empty.png" class="modal-star img-responsive">');
+                $("#modal-kitchen").find(".modal-center").append('<img id="'+i+'"src="img/star-empty.png" class="modal-star img-responsive">');
 
             if (i <= Math.round(restaurants[id].interierMark))
-                $("#modal-interier").children(".modal-stars").children(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
+                $("#modal-interier").find(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
             else
-                $("#modal-interier").children(".modal-stars").children(".modal-center").append('<img id="'+i+'"src="img/star-empty.png" class="modal-star img-responsive">');
+                $("#modal-interier").find(".modal-center").append('<img id="'+i+'"src="img/star-empty.png" class="modal-star img-responsive">');
 
             if (i <= Math.round(restaurants[id].serviceMark))
-                $("#modal-service").children(".modal-stars").children(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
+                $("#modal-service").find(".modal-center").append('<img id="'+i+'"src="img/star.png" class="modal-star img-responsive">');
             else
-                $("#modal-service").children(".modal-stars").children(".modal-center").append('<img id="'+i+'"src="img/star-empty.png" class="modal-star img-responsive">');
+                $("#modal-service").find(".modal-center").append('<img id="'+i+'"src="img/star-empty.png" class="modal-star img-responsive">');
         }
 
         $(".modal-body").children("p").text(restaurants[id].review);
@@ -152,24 +152,24 @@ var doSort = function() {
                     curElem.append("<div class=\"container name\"><h2>"+ restaurants[a].name +"</h2></div>");
                     curElem.append("<div class=\"container-fluid content\"></div>");
                     curElem.children(".container-fluid.content").append("<div class=\"container image\"><img src=\""+ restaurants[a].img +"\" class=\"img-responsive\"></div>");
-                    curElem.children(".container-fluid.content").children(".container .image").append("<div class=\"image-over\"><div class=\"row\"><div class=\"crit col-xs-9 col-md-6\">Общая<br>Кухня<br>Интерьер<br>Сервис</div><div class=\"stars col-xs-9 col-md-6\"></div></div></div>");
+                    curElem.find(".container.image").append("<div class=\"image-over\"><div class=\"row\"><div class=\"crit col-xs-9 col-md-6\">Общая<br>Кухня<br>Интерьер<br>Сервис</div><div class=\"stars col-xs-9 col-md-6\"></div></div></div>");
                     for (var m = 0; m < Math.round(restaurants[a].generalMark); m++) {
-                        curElem.children(".container-fluid.content").children(".container.image").children(".image-over").children(".row").children(".stars.col-xs-9.col-md-6").last().append("<img src=\"img/star.png\" class=\"star img-responsive\">");
+                        curElem.find(".stars.col-xs-9.col-md-6").last().append("<img src=\"img/star.png\" class=\"star img-responsive\">");
                     }
-                    curElem.children(".container-fluid.content").children(".container.image").children(".image-over").children(".row").children(".stars.col-xs-9.col-md-6").last().append("<br>");
+                    curElem.find(".stars.col-xs-9.col-md-6").last().append("<br>");
                     
                     for (var m = 0; m < Math.round(restaurants[a].kitchenMark); m++) {
-                        curElem.children(".container-fluid.content").children(".container.image").children(".image-over").children(".row").children(".stars.col-xs-9.col-md-6").last().append("<img src=\"img/star.png\" class=\"star img-responsive\">");
+                        curElem.find(".stars.col-xs-9.col-md-6").last().append("<img src=\"img/star.png\" class=\"star img-responsive\">");
                     }
-                    curElem.children(".container-fluid.content").children(".container.image").children(".image-over").children(".row").children(".stars.col-xs-9.col-md-6").last().append("<br>");
+                    curElem.find(".stars.col-xs-9.col-md-6").last().append("<br>");
                     
                     for (var m = 0; m < Math.round(restaurants[a].interierMark); m++) {
-                        curElem.children(".container-fluid.content").children(".container.image").children(".image-over").children(".row").children(".stars.col-xs-9.col-md-6").last().append("<img src=\"img/star.png\" class=\"star img-responsive\">");
+                        curElem.find(".stars.col-xs-9.col-md-6").last().append("<img src=\"img/star.png\" class=\"star img-responsive\">");
                     }
-                    curElem.children(".container-fluid.content").children(".container.image").children(".image-over").children(".row").children(".stars.col-xs-9.col-md-6").last().append("<br>");
+                    curElem.find(".stars.col-xs-9.col-md-6").last().append("<br>");
                     
                     for (var m = 0; m < Math.round(restaurants[a].serviceMark); m++) {
-                        curElem.children(".container-fluid.content").children(".container.image").children(".image-over").children(".row").children(".stars.col-xs-9.col-md-6").last().append("<img src=\"img/star.png\" class=\"star img-responsive\">");
+                        curElem.find(".stars.col-xs-9.col-md-6").last().append("<img src=\"img/star.png\" class=\"star img-responsive\">");
                     }
                     curElem.children(".container-fluid.content").append("<div class=\"container text\"><br><img class=\"map-icon\" src=\"img/map.jpg\">&nbsp;&nbsp;"+ restaurants[a].address +"</div>");
                     curElem.children(".container-fluid.content").append("<a class=\"descr\"><span  data-id=\"" + restaurants[a].id + "\">Подробнее</span></a>");
@@ -200,7 +200,7 @@ var doSort = function() {
 };
 
 var fillStar = function (modal, q) {
-	var stars = $('#' + modal).children(".modal-stars").children(".modal-center").children(".modal-star");
+	var stars = $('#' + modal).find(".modal-star");
     
 	for (i=0; i<q; i++) {
 			$(stars[i]).attr("src", "img/star.png");

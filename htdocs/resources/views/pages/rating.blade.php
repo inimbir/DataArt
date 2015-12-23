@@ -31,9 +31,6 @@
                                 <span>Общая</span>
                                 <div class="modal-stars">
                                     <center class="modal-center">
-                                        <img src="img/star.png" class="modal-star img-responsive">
-                                        <img src="img/star.png" class="modal-star img-responsive">
-                                        <img src="img/star.png" class="modal-star img-responsive">
                                     </center>
                                 </div>
                             </div>
@@ -41,9 +38,6 @@
                                 <span>Кухня</span>
                                 <div class="modal-stars">
                                     <center class="modal-center">
-                                        <img src="img/star.png" class="modal-star img-responsive">
-                                        <img src="img/star.png" class="modal-star img-responsive">
-                                        <img src="img/star.png" class="modal-star img-responsive">
                                     </center>
                                 </div>
                             </div>
@@ -51,9 +45,6 @@
                                 <span>Интерьер</span>
                                 <div class="modal-stars">
                                     <center class="modal-center">
-                                        <img src="img/star.png" class="modal-star img-responsive">
-                                        <img src="img/star.png" class="modal-star img-responsive">
-                                        <img src="img/star.png" class="modal-star img-responsive">
                                     </center>
                                 </div>
                             </div>
@@ -61,9 +52,6 @@
                                 <span>Сервис</span>
                                 <div class="modal-stars">
                                     <center class="modal-center">
-                                        <img src="img/star.png" class="modal-star img-responsive">
-                                        <img src="img/star.png" class="modal-star img-responsive">
-                                        <img src="img/star.png" class="modal-star img-responsive">
                                     </center>
                                 </div>
                             </div>

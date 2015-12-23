@@ -27,11 +27,13 @@
 }
 
 #list {
+	overflow-x: hidden;
+	overflow-y: auto;
     position: fixed;
 	width: 30%;
 	float: right;
 	font-family: 'Roboto', sans-serif;
-    left: 100%;
+    left:100%;
 	background: rgba(255, 255, 255, .8);
 	text-align:center;
 }
@@ -101,4 +103,32 @@ img.photo {
 
 .signbutton:active {
 	background-color:#90CAF9;
+}
+
+.p-stars {
+    width: 75%;
+    height: 1.5em;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+.p-crit {
+    padding: 0;
+}
+
+.crit {
+    padding-left: 4em;
+}
+
+.stars {
+    width: 35%;
+}
+
+.star {
+    width: 100%;
+    max-width: 1.2em;
+    display: inline;
+    float: left;
+    position: relative;
+    margin: 1px;
 }
